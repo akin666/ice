@@ -1,0 +1,13 @@
+
+
+#ifndef _DIODIODI_H_
+#define _DIODIODI_H_
+
+#include "dataio.h"
+#include "memdio.h"
+#include "filedio.h"
+#include "diolocker.h"
+#include "common.h"
+
+#endif // _DIODIODI_H_
+

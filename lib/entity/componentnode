@@ -1,0 +1,4 @@
+
+#ifndef COMPONENTNODE_H_
+#include "componentnode.h"
+#endif

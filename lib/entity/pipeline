@@ -1,0 +1,4 @@
+
+#ifndef PIPELINE_H_
+#include "pipeline.h"
+#endif

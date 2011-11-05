@@ -1,0 +1,4 @@
+
+#ifndef ENTITY_H_
+#include "entity.h"
+#endif

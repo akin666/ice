@@ -1,0 +1,4 @@
+
+#ifndef COMPONENTNET_H_
+#include "componentnet.h"
+#endif

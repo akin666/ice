@@ -1,0 +1,4 @@
+
+#ifndef STORAGE_H_
+#include "storage.h"
+#endif

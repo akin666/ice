@@ -1,0 +1,4 @@
+
+#ifndef FENCECOMPONENT_H_
+#include "fencecomponent.h"
+#endif

@@ -1,0 +1,9 @@
+/*
+ * logserver
+ *      Author: akin
+ */
+
+#ifndef LOGSERVER_H_
+#inclue "logserver.h"
+#endif
+

@@ -1,0 +1,4 @@
+
+#ifndef CONCURRENTCOMPONENT_H_
+#include "cccomponent.h"
+#endif

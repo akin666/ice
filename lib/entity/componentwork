@@ -1,0 +1,4 @@
+
+#ifndef COMPONENTWORK_H_
+#include "componentwork.h"
+#endif
