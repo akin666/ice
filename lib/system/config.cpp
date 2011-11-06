@@ -10,8 +10,8 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <dio/dataio.h>
-#include <dio/filedio.h>
+#include <dio/dio>
+#include <dio/filedio>
 
 
 namespace ice

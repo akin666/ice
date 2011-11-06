@@ -12,22 +12,22 @@
 
 namespace ice
 {
-class UTF8Decoder
-{
-private:
-	unsigned int unicodeLength;
-	std::string input;
-public:
-	UTF8Decoder();
-	~UTF8Decoder();
+	class UTF8Decoder
+	{
+	private:
+		unsigned int unicodeLength;
+		std::string input;
+	public:
+		UTF8Decoder();
+		~UTF8Decoder();
 
-	bool init( const std::string data );
-	void reset();
+		bool init( const std::string data );
+		void reset();
 
-	bool isEmpty();
+		bool isEmpty();
 
-	bool decodeTo( std::vector<UNICODE>& data );
-};
+		bool decodeTo( std::vector<UNICODE>& data );
+	};
 }
 
 #endif

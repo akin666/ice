@@ -14,23 +14,23 @@
 namespace ice
 {
 
-class Clock
-{
-protected:
-	unsigned int start;
-	unsigned int ustart;
-	timeval tmpTime;
-public:
-	Clock( Time current = 0 );
-	Clock( Seconds current , MicroSeconds us );
-	virtual ~Clock();
+	class Clock
+	{
+	protected:
+		unsigned int start;
+		unsigned int ustart;
+		timeval tmpTime;
+	public:
+		Clock( Time current = 0 );
+		Clock( Seconds current , MicroSeconds us );
+		virtual ~Clock();
 
-	Time getCurrentTime();
-	Time getUnixTime();
+		Time getCurrentTime();
+		Time getUnixTime();
 
-	void getCurrentTime( Seconds& s , MicroSeconds& us );
-	void getUnixTime( Seconds& s , MicroSeconds& us );
-};
+		void getCurrentTime( Seconds& s , MicroSeconds& us );
+		void getUnixTime( Seconds& s , MicroSeconds& us );
+	};
 
 } /* namespace ice */
 #endif

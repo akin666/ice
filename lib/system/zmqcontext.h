@@ -14,21 +14,21 @@
 namespace ice
 {
 
-class ZMQContext
-{
-protected:
-	static ZMQContext *singleton;
-	static std::mutex s_mutex;
+	class ZMQContext
+	{
+	protected:
+		static ZMQContext *singleton;
+		static std::mutex s_mutex;
 
-	zmq::context_t context;
-public:
-	ZMQContext();
-	virtual ~ZMQContext();
+		zmq::context_t context;
+	public:
+		ZMQContext();
+		virtual ~ZMQContext();
 
-	zmq::context_t& getContext();
+		zmq::context_t& getContext();
 
-	static ZMQContext& getSingleton();
-};
+		static ZMQContext& getSingleton();
+	};
 
 } /* namespace ice */
 #endif /* ZMQCONTEXT_H_ */

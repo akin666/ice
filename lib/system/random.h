@@ -10,20 +10,21 @@
 
 namespace ice
 {
-class Random {
-protected:
-	static Random *sm_singleton;
-public:
-	Random();
-	virtual ~Random();
+	class Random
+	{
+	protected:
+		static Random *sm_singleton;
+	public:
+		Random();
+		virtual ~Random();
 
-	float getFloat();
-	unsigned char getUChar();
-	char getChar();
-	int getInt();
+		float getFloat();
+		unsigned char getUChar();
+		char getChar();
+		int getInt();
 
-	static Random& get();
-};
+		static Random& get();
+	};
 }
 
 #endif /* RANDOM_H_ */

@@ -16,21 +16,22 @@
 
 namespace ice
 {
-class Timer {
-protected:
-	Time val;
-	Time to;
-	Clock clock;
-public:
-	Timer();
-	virtual ~Timer();
+	class Timer
+	{
+	protected:
+		Time val;
+		Time to;
+		Clock clock;
+	public:
+		Timer();
+		virtual ~Timer();
 
-	void set( Time time );
+		void set( Time time );
 
-	void reset();
+		void reset();
 
-	bool go();
-};
+		bool go();
+	};
 
 #ifdef COMMENTS
 So this thing is supposed to work as:
