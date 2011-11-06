@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_GLOBAL_H_
+#include "global.h"
+#endif

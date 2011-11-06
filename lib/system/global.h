@@ -1,12 +1,12 @@
 /*
- * assetmanager.h
+ * global.h
  *
  *  Created on: 24.7.2011
  *      Author: akin
  */
 
-#ifndef ASSETMANAGER_H_
-#define ASSETMANAGER_H_
+#ifndef ICE_GLOBAL_H_
+#define ICE_GLOBAL_H_
 
 #include <map>
 #include <iterator>
@@ -16,12 +16,12 @@
 namespace ice
 {
 	template <class ctype>
-	class AssetManager
+	class Global
 	{
 	protected:
 		static std::map< std::string , ctype * > data;
 
-		static AssetManager *current;
+		static Global *current;
 	public:
 		static void set( const std::string key , ctype *ptr );
 		static ctype *get( const std::string key );
@@ -34,19 +34,19 @@ namespace ice
 	};
 
 	template <class ctype>
-	AssetManager<ctype> *AssetManager<ctype>::current;
+	Global<ctype> *Global<ctype>::current;
 
 	template <class ctype>
-	std::map< std::string , ctype * > AssetManager<ctype>::data;
+	std::map< std::string , ctype * > Global<ctype>::data;
 
 	template <class ctype>
-	void AssetManager<ctype>::set( const std::string key , ctype *ptr )
+	void Global<ctype>::set( const std::string key , ctype *ptr )
 	{
 		data[ key ] = ptr;
 	}
 
 	template <class ctype>
-	ctype *AssetManager<ctype>::get( const std::string key )
+	ctype *Global<ctype>::get( const std::string key )
 	{
 		typename std::map< std::string , ctype*>::iterator iter = data.find( key );
 
@@ -58,14 +58,14 @@ namespace ice
 	}
 
 	template <class ctype>
-	bool AssetManager<ctype>::has( const std::string key )
+	bool Global<ctype>::has( const std::string key )
 	{
 		typename std::map< std::string , ctype*>::iterator iter = data.find( key );
 		return iter != data.end();
 	}
 
 	template <class ctype>
-	void AssetManager<ctype>::getKeys(  std::vector<std::string>& keys )
+	void Global<ctype>::getKeys(  std::vector<std::string>& keys )
 	{
 		keys.clear();
 		keys.reserve( data.size() );
@@ -77,7 +77,7 @@ namespace ice
 	}
 
 	template <class ctype>
-	void AssetManager<ctype>::clear()
+	void Global<ctype>::clear()
 	{
 		for( typename std::map< std::string , ctype * >::iterator iter = data.begin() ; iter != data.end() ; ++iter )
 		{
@@ -87,7 +87,7 @@ namespace ice
 	}
 
 	template <class ctype>
-	void AssetManager<ctype>::remove( const std::string key )
+	void Global<ctype>::remove( const std::string key )
 	{
 		typename std::map< std::string , ctype * >::iterator iter = data.find( key );
 		if( iter != data.end())
@@ -98,4 +98,4 @@ namespace ice
 	}
 } /* namespace ice */
 
-#endif /* ASSETMANAGER_H_ */
+#endif /* ICE_GLOBAL_H_ */

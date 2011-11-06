@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#ifndef CONST_COMMON_H_
-#define CONST_COMMON_H_
+#ifndef ICE_COMMON_H_
+#define ICE_COMMON_H_
 
 #define DELTA 0.0001f
 #define PI 3.141593f
@@ -29,4 +29,4 @@ namespace ice
     typedef unsigned int BufferIndex;
 }
 
-#endif /* CONST_COMMON_H_ */
+#endif /* ICE_COMMON_H_ */
