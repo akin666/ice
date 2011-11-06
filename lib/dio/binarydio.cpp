@@ -13,7 +13,7 @@ namespace ice
 	{
 	}
 
-	BinaryDIO::BinaryDIO( std::string path )
+	BinaryDIO::BinaryDIO( std::string path ) throw (DIOException)
 	{
 		open( path );
 	}
@@ -27,7 +27,7 @@ namespace ice
 		}
 	}
 
-	void BinaryDIO::open( std::string path )
+	void BinaryDIO::open( std::string path ) throw (DIOException)
 	{
 		if( file != NULL )
 		{
@@ -43,7 +43,7 @@ namespace ice
 
 			if( file == NULL )
 			{
-				std::cout <<"Could not open new file: " << path << std::endl;
+				throw DIOException( "BinaryDIO could not open file" );
 			}
 		}
 	}
@@ -61,22 +61,22 @@ namespace ice
 	{
 	}
 
-	int BinaryDIO::getPosition()
+	int BinaryDIO::getPosition() throw (DIOException)
 	{
 		return (int)ftell( file );
 	}
 
-	void BinaryDIO::setPosition( int position )
+	void BinaryDIO::setPosition( int position ) throw (DIOException)
 	{
 		fseek( file , position , SEEK_SET );
 	}
 
-	void BinaryDIO::forward( int position )
+	void BinaryDIO::forward( int position ) throw (DIOException)
 	{
 		fseek( file , position , SEEK_CUR );
 	}
 
-	void BinaryDIO::backward( int position )
+	void BinaryDIO::backward( int position ) throw (DIOException)
 	{
 		fseek( file , position , SEEK_CUR );
 	}
@@ -108,47 +108,47 @@ namespace ice
 	{
 	}
 
-	void BinaryDIO::read( float& arg )
+	void BinaryDIO::read( float& arg ) throw (DIOException)
 	{
 		fread( &arg , sizeof(float) , 1 , file  );
 	}
 
-	void BinaryDIO::read( char& arg )
+	void BinaryDIO::read( char& arg ) throw (DIOException)
 	{
 		fread( &arg , sizeof(char) , 1 , file  );
 	}
 
-	void BinaryDIO::read( unsigned char& arg )
+	void BinaryDIO::read( unsigned char& arg ) throw (DIOException)
 	{
 		fread( &arg , sizeof(unsigned char) , 1 , file  );
 	}
 
-	void BinaryDIO::read( int& arg )
+	void BinaryDIO::read( int& arg ) throw (DIOException)
 	{
 		fread( &arg , sizeof(int) , 1 , file  );
 	}
 
-	void BinaryDIO::read( unsigned int& arg )
+	void BinaryDIO::read( unsigned int& arg ) throw (DIOException)
 	{
 		fread( &arg , sizeof(unsigned int) , 1 , file  );
 	}
 
-	void BinaryDIO::read( bool& arg )
+	void BinaryDIO::read( bool& arg ) throw (DIOException)
 	{
 		fread( &arg , sizeof(bool) , 1 , file  );
 	}
 
-	void BinaryDIO::read( std::string& arg )
+	void BinaryDIO::read( std::string& arg ) throw (DIOException)
 	{
-		std::cout << "READ STRING NOT SUPPORTED" << std::endl;
+		throw DIOException( "Unsupported BinaryDIO::read std::string" );
 	}
 
-	void BinaryDIO::readLine( std::string& arg )
+	void BinaryDIO::readLine( std::string& arg ) throw (DIOException)
 	{
-		std::cout << "READ LINE STRING NOT SUPPORTED" << std::endl;
+		throw DIOException( "Unsupported BinaryDIO::readLine std::string" );
 	}
 
-	unsigned int BinaryDIO::readBlock( unsigned char *buffer , const unsigned int char_count )
+	unsigned int BinaryDIO::readBlock( unsigned char *buffer , const unsigned int char_count ) throw (DIOException)
 	{
 		return fread( &buffer , sizeof(unsigned char) , char_count , file  );
 	}
@@ -163,47 +163,47 @@ namespace ice
 		return end_position - current_position;
 	}
 
-	void BinaryDIO::writeFloat(const float& arg)
+	void BinaryDIO::writeFloat(const float& arg) throw (DIOException)
 	{
 		fwrite( &arg , 1 , sizeof(float) , file );
 	}
 
-	void BinaryDIO::writeByte(const char& arg)
+	void BinaryDIO::writeByte(const char& arg) throw (DIOException)
 	{
 		fwrite( &arg , 1 , sizeof(char) , file );
 	}
 
-	void BinaryDIO::writeByte(const unsigned char& arg)
+	void BinaryDIO::writeByte(const unsigned char& arg) throw (DIOException)
 	{
 		fwrite( &arg , 1 , sizeof(unsigned char) , file );
 	}
 
-	void BinaryDIO::writeInt(const int& arg)
+	void BinaryDIO::writeInt(const int& arg) throw (DIOException)
 	{
 		fwrite( &arg , 1 , sizeof(int) , file );
 	}
 
-	void BinaryDIO::writeUnsignedInt(const unsigned int& arg)
+	void BinaryDIO::writeUnsignedInt(const unsigned int& arg) throw (DIOException)
 	{
 		fwrite( &arg , 1 , sizeof(unsigned int) , file );
 	}
 
-	void BinaryDIO::writeBool(const bool& arg)
+	void BinaryDIO::writeBool(const bool& arg) throw (DIOException)
 	{
 		fwrite( &arg , 1 , sizeof(bool) , file );
 	}
 
-	void BinaryDIO::writeString(const std::string& arg)
+	void BinaryDIO::writeString(const std::string& arg) throw (DIOException)
 	{
 		fputs( arg.c_str() , file );
 	}
 
-	void BinaryDIO::writeLine(const std::string& arg)
+	void BinaryDIO::writeLine(const std::string& arg) throw (DIOException)
 	{
 		fputs( arg.c_str() , file );
 	}
 
-	unsigned int BinaryDIO::writeBlock(const unsigned char *buffer, const unsigned int char_count)
+	unsigned int BinaryDIO::writeBlock(const unsigned char *buffer, const unsigned int char_count) throw (DIOException)
 	{
 		size_t tmp = fwrite( buffer , 1 , sizeof(unsigned char) * char_count , file );
 		return (unsigned int)tmp;

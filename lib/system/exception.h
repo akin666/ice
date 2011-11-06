@@ -7,16 +7,16 @@
 
 namespace ice
 {
-	class Exception : public ::std::exception
+	class Exception: public ::std::exception
 	{
-        protected:
-            std::string message;
+	protected:
+		std::string message;
 	public:
-                Exception( std::string msg );
-                Exception( const Exception& other );
-		virtual ~Exception() throw();
+		Exception(std::string msg);
+		Exception(const Exception& other);
+		virtual ~Exception() throw ();
 
-                virtual std::string getMessage();
+		virtual std::string getMessage();
 	};
 }
 

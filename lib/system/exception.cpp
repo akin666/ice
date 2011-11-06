@@ -9,22 +9,22 @@
 
 namespace ice
 {
-        Exception::Exception( std::string msg )
-        : message(msg)
+	Exception::Exception( std::string msg )
+	: message(msg)
 	{
 	}
 
-        Exception::Exception( const Exception& other )
-        : message( other.message )
-        {
-        }
-
-        Exception::~Exception() throw()
+	Exception::Exception( const Exception& other )
+	: message( other.message )
 	{
 	}
 
-        std::string Exception::getMessage()
-        {
-            return message;
-        }
+	Exception::~Exception() throw()
+	{
+	}
+
+	std::string Exception::getMessage()
+	{
+		return message;
+	}
 }

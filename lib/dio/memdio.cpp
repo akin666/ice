@@ -19,13 +19,13 @@ namespace ice
 		data = new std::vector<unsigned char>;
 	}
 
-	MemDIO::MemDIO( std::vector<unsigned char> *buffer )
+	MemDIO::MemDIO( std::vector<unsigned char> *buffer ) throw (DIOException)
 	{
 		iter = 0;
 		data = buffer;
 	}
 
-	MemDIO::MemDIO( DIO& buffer )
+	MemDIO::MemDIO( DIO& buffer ) throw (DIOException)
 	{
 		iter = 0;
 		data = new std::vector<unsigned char>;
@@ -58,23 +58,23 @@ namespace ice
 	{
 	}
 
-	int MemDIO::getPosition()
+	int MemDIO::getPosition() throw (DIOException)
 	{
 		return iter;
 	}
 
-	void MemDIO::setPosition( int position )
+	void MemDIO::setPosition( int position ) throw (DIOException)
 	{
 		if( position > (int)(data->size()) || position < 0 ) return;
 		iter = position;
 	}
 
-	void MemDIO::forward( int position )
+	void MemDIO::forward( int position ) throw (DIOException)
 	{
 		setPosition( iter + position );
 	}
 
-	void MemDIO::backward( int position )
+	void MemDIO::backward( int position ) throw (DIOException)
 	{
 		setPosition( iter - position );
 	}
@@ -101,7 +101,7 @@ namespace ice
 	{
 	}
 
-	void MemDIO::read( float& arg )
+	void MemDIO::read( float& arg ) throw (DIOException)
 	{
 		if( iter+4 <= (int)(data->size()) )
 		{
@@ -111,7 +111,7 @@ namespace ice
 		}
 	}
 
-	void MemDIO::read( char& arg )
+	void MemDIO::read( char& arg ) throw (DIOException)
 	{
 		if( iter+1 <= (int)(data->size()) )
 		{
@@ -121,7 +121,7 @@ namespace ice
 		}
 	}
 
-	void MemDIO::read( unsigned char& arg )
+	void MemDIO::read( unsigned char& arg ) throw (DIOException)
 	{
 		if( iter+1 <= (int)(data->size()) )
 		{
@@ -131,7 +131,7 @@ namespace ice
 		}
 	}
 
-	void MemDIO::read( int& arg )
+	void MemDIO::read( int& arg ) throw (DIOException)
 	{
 		if( iter+4 <= (int)(data->size()) )
 		{
@@ -145,30 +145,30 @@ namespace ice
 		}
 	}
 
-	void MemDIO::read( unsigned int& arg )
+	void MemDIO::read( unsigned int& arg ) throw (DIOException)
 	{
 		int tmp;
 		read( tmp );
 		arg = (unsigned int)tmp;
 	}
 
-	void MemDIO::read( bool& arg )
+	void MemDIO::read( bool& arg ) throw (DIOException)
 	{
 		char tmp = (char)arg;
 		read( tmp );
 	}
 
-	void MemDIO::read( std::string& arg )
+	void MemDIO::read( std::string& arg ) throw (DIOException)
 	{
 		// ?? TODO
 	}
 
-	void MemDIO::readLine( std::string& arg )
+	void MemDIO::readLine( std::string& arg ) throw (DIOException)
 	{
 		// ?? TODO
 	}
 
-	unsigned int MemDIO::readBlock( unsigned char *buffer , const unsigned int char_count )
+	unsigned int MemDIO::readBlock( unsigned char *buffer , const unsigned int char_count ) throw (DIOException)
 	{
 		unsigned int rb = data->size() - iter;
 		rb = rb > char_count ? char_count : rb;
@@ -187,7 +187,7 @@ namespace ice
 		return data->size() - iter;
 	}
 
-	void MemDIO::writeFloat(const float& arg)
+	void MemDIO::writeFloat(const float& arg) throw (DIOException)
 	{
 	//	static char data[4];
 	//
@@ -195,35 +195,35 @@ namespace ice
 	//	stream.write( (char*)&arg , sizeof(float) );
 	}
 
-	void MemDIO::writeByte(const char& arg)
+	void MemDIO::writeByte(const char& arg) throw (DIOException)
 	{
 	}
 
-	void MemDIO::writeByte(const unsigned char& arg)
+	void MemDIO::writeByte(const unsigned char& arg) throw (DIOException)
 	{
 	}
 
-	void MemDIO::writeInt(const int& arg)
+	void MemDIO::writeInt(const int& arg) throw (DIOException)
 	{
 	}
 
-	void MemDIO::writeUnsignedInt(const unsigned int& arg)
+	void MemDIO::writeUnsignedInt(const unsigned int& arg) throw (DIOException)
 	{
 	}
 
-	void MemDIO::writeBool(const bool& arg)
+	void MemDIO::writeBool(const bool& arg) throw (DIOException)
 	{
 	}
 
-	void MemDIO::writeString(const std::string& arg)
+	void MemDIO::writeString(const std::string& arg) throw (DIOException)
 	{
 	}
 
-	void MemDIO::writeLine(const std::string& arg)
+	void MemDIO::writeLine(const std::string& arg) throw (DIOException)
 	{
 	}
 
-	unsigned int MemDIO::writeBlock(const unsigned char *buffer, const unsigned int char_count)
+	unsigned int MemDIO::writeBlock(const unsigned char *buffer, const unsigned int char_count) throw (DIOException)
 	{
 		return 0;
 	}

@@ -1,0 +1,8 @@
+
+
+#ifndef ICE_DIOEXCEPTION_H_
+
+#include "dioexception.h"
+
+#endif 
+
