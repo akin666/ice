@@ -5,10 +5,9 @@
  *      Author: akin
  */
 
-#include "textfiledio.h"
+#include "textfiledio"
 #include <string>
 #include <iostream>
-#include "../sys/log.h"
 
 namespace ice
 {
@@ -38,7 +37,7 @@ namespace ice
 
 		if( !stream.good() ) {
 			stream.close();
-			LOG_ERROR( "Could not open file." );
+//			LOG_ERROR( "Could not open file." );
 			return;
 		}
 	}

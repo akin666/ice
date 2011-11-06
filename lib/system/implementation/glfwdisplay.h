@@ -8,7 +8,7 @@
 #ifndef GLFWDISPLAY_H_
 #define GLFWDISPLAY_H_
 
-#include "../display.h"
+#include "../display"
 
 namespace ice
 {

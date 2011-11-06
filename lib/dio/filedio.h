@@ -5,10 +5,10 @@
  *      Author: akin
  */
 
-#ifndef FILEDIO_H_
-#define FILEDIO_H_
+#ifndef ICE_FILEDIO_H_
+#define ICE_FILEDIO_H_
 
-#include "dataio.h"
+#include "dio"
 #include <fstream>
 
 namespace ice

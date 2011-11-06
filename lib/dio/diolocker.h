@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#ifndef DIOLOCKER_H_
-#define DIOLOCKER_H_
+#ifndef ICE_DIOLOCKER_H_
+#define ICE_DIOLOCKER_H_
 
 namespace ice
 {
@@ -21,4 +21,4 @@ namespace ice
 	};
 }
 
-#endif /* DIOLOCKER_H_ */
+#endif /* ICE_DIOLOCKER_H_ */

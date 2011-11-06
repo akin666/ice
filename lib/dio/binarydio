@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_BINARYREADER_H_
+#include "binarydio.h"
+#endif

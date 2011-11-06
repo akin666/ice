@@ -7,11 +7,12 @@
  *  Only forward reading!
  */
 
-#ifndef DATAIO_H_
-#define DATAIO_H_
+#ifndef ICE_DATAIO_H_
+#define ICE_DATAIO_H_
 
 #include <iostream>
 #include "diolocker.h"
+#include "dioreader"
 
 namespace ice
 {

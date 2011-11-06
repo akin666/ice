@@ -5,12 +5,12 @@
  *      Author: akin
  */
 
-#ifndef BINARYREADER_H_
-#define BINARYREADER_H_
+#ifndef ICE_BINARYREADER_H_
+#define ICE_BINARYREADER_H_
 
 #include <iostream>
 #include <cstdio>
-#include "dataio.h"
+#include "dio"
 
 namespace ice
 {

@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#include "diolocker.h"
-#include "dataio.h"
+#include "diolocker"
+#include "dio"
 
 namespace ice
 {

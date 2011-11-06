@@ -5,10 +5,10 @@
  *      Author: akin
  */
 
-#ifndef TEXTFILEDIO_H_
-#define TEXTFILEDIO_H_
+#ifndef ICE_TEXTFILEDIO_H_
+#define ICE_TEXTFILEDIO_H_
 
-#include "dataio.h"
+#include "dio"
 #include <fstream>
 
 namespace ice

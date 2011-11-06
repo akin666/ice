@@ -1,0 +1,8 @@
+
+
+#ifndef ICE_DIOLOCKER_H_
+
+#include "diolocker.h"
+
+#endif 
+

@@ -5,10 +5,9 @@
  *      Author: akin
  */
 
-#include "filedio.h"
+#include "filedio"
 #include <string>
 #include <iostream>
-#include "../sys/log.h"
 
 namespace ice
 {

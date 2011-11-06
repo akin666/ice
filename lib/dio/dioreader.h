@@ -1,8 +1,8 @@
 
-#ifndef DIO_COMMON_H_
-#define DIO_COMMON_H_
+#ifndef ICE_DIO_READER_H_
+#define ICE_DIO_READER_H_
 
-#include "dataio.h"
+#include "dio"
 #include <iostream>
 #include <vector>
 

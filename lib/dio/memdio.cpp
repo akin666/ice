@@ -5,12 +5,11 @@
  *      Author: akin
  */
 
-#include "memdio.h"
+#include "memdio"
 #include <string>
 #include <iostream>
 #include <sstream>
 #include <cstring>
-#include "../sys/log.h"
 
 namespace ice
 {

@@ -5,10 +5,10 @@
  *      Author: akin
  */
 
-#ifndef MEMDIO_H_
-#define MEMDIO_H_
+#ifndef ICE_MEMDIO_H_
+#define ICE_MEMDIO_H_
 
-#include "dataio.h"
+#include "dio"
 #include <vector>
 
 namespace ice
