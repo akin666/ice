@@ -38,6 +38,17 @@ void IceApplication::initialize( std::string logProtocol , unsigned int pool_wor
 		{
 			kill();
 		}
+
+		try {
+			mlog.setProtocol( logProtocol );
+			mlog.init();
+		} catch( LogException& e )
+		{
+			// TODO!
+		}
+		catch( ... ) {
+			// TODO!
+		}
 	}
 }
 
@@ -63,16 +74,20 @@ void IceApplication::restart()
 
 void IceApplication::log( std::string msg )
 {
+	if( (state & ICEAPP_INITIALIZED) != 0 )
+	{
+		mlog.fire( Log::Notification , msg );
+	}
 }
 
 Time IceApplication::getTime()
 {
-	return 0;
+	return clock.getCurrentTime();
 }
 
 unsigned int IceApplication::getUnixTime()
 {
-	return 0;
+	return clock.getUnixTime();
 }
 
 ThreadPool& IceApplication::getThreadPool()
@@ -83,6 +98,11 @@ ThreadPool& IceApplication::getThreadPool()
 Pipeline& IceApplication::getPipeline()
 {
 	return pipeline;
+}
+
+Log& IceApplication::getLog()
+{
+	return mlog;
 }
 
 bool IceApplication::shouldExit()

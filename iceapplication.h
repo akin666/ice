@@ -8,39 +8,42 @@
 #ifndef ICEAPPLICATION_H_
 #define ICEAPPLICATION_H_
 
-#include <sys/application.h>
+#include <system/application>
+#include <system/clock>
 
 namespace ice
 {
+	class IceApplication : public Application
+	{
+	protected:
+		Pipeline pipeline;
+		ThreadPool pool;
+		Clock clock;
 
-class IceApplication : public Application
-{
-protected:
-	Pipeline pipeline;
-	ThreadPool pool;
+		Log mlog;
 
-	unsigned int state;
-public:
-	IceApplication( int argc , char *argv[] );
-	virtual ~IceApplication();
+		unsigned int state;
+	public:
+		IceApplication( int argc , char *argv[] );
+		virtual ~IceApplication();
 
-	void initialize( std::string logProtocol , unsigned int pool_worker_count );
+		void initialize( std::string logProtocol , unsigned int pool_worker_count );
 
-	virtual void suspend();
-	virtual void resume();
-	virtual void kill();
-	virtual void restart();
-	virtual void log( std::string msg );
+		virtual void suspend();
+		virtual void resume();
+		virtual void kill();
+		virtual void restart();
+		virtual void log( std::string msg );
 
-	virtual Time getTime();
-	virtual unsigned int getUnixTime();
+		virtual Time getTime();
+		virtual unsigned int getUnixTime();
 
-	virtual ThreadPool& getThreadPool();
-	virtual Pipeline& getPipeline();
+		virtual ThreadPool& getThreadPool();
+		virtual Pipeline& getPipeline();
+		virtual Log& getLog();
 
-	virtual bool shouldExit();
-	virtual bool shouldRestart();
-};
-
+		virtual bool shouldExit();
+		virtual bool shouldRestart();
+	};
 } /* namespace ice */
 #endif /* ICEAPPLICATION_H_ */
