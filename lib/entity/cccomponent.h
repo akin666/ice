@@ -18,10 +18,10 @@ namespace ice
 	protected:
 		unsigned int concurrent_reference_counting;
 	public:
-		CCComponent( std::string name );
+		CCComponent( std::string name ) throw (ComponentException);
 		virtual ~CCComponent();
 
-		void schedule( ComponentWork& work );
+		void schedule( ComponentWork& work ) throw (ComponentException);
 		void finished( ComponentWork& work );
 	};
 } /* namespace ice */

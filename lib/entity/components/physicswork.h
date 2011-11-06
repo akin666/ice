@@ -8,7 +8,7 @@
 #ifndef PHYSICSWORK_H_
 #define PHYSICSWORK_H_
 
-#include <entity/componentwork.h>
+#include <entity/componentwork>
 
 namespace ice
 {

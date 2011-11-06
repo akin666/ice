@@ -10,7 +10,8 @@
 
 #include <entity/cccomponent>
 #include <entity/entity>
-#include <datatypes/common.h>
+#include <system/common>
+#include <system/clock>
 #include <deque>
 #include <entity/properties/timeproperty.h>
 #include "timework.h"
@@ -25,6 +26,7 @@ class TimeComponent : public CCComponent
 protected:
 	std::deque<EntityKey> entities;
 
+	Clock clock;
 	TimeWork work;
 
 	bool initialized;
@@ -39,13 +41,13 @@ protected:
 	// twice or thrice.
 	friend class TimeWork;
 public:
-	TimeComponent();
+	TimeComponent() throw (ComponentException);
 	virtual ~TimeComponent();
 
-	virtual void attach( Entity& entity );
-	virtual void detach( Entity& entity );
+	virtual void attach( Entity& entity ) throw (ComponentException);
+	virtual void detach( Entity& entity ) throw (ComponentException);
 
-	virtual void start();
+	virtual void start() throw (ComponentException);
 };
 
 } /* namespace ice */

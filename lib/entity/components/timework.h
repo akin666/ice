@@ -8,7 +8,7 @@
 #ifndef TIMEWORK_H_
 #define TIMEWORK_H_
 
-#include <entity/componentwork.h>
+#include <entity/componentwork>
 
 namespace ice
 {

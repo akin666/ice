@@ -39,13 +39,13 @@ protected:
 
 	friend class PhysicsWork;
 public:
-	PhysicsComponent();
+	PhysicsComponent() throw (ComponentException);
 	virtual ~PhysicsComponent();
 
-	virtual void attach( Entity& entity );
-	virtual void detach( Entity& entity );
+	virtual void attach( Entity& entity ) throw (ComponentException);
+	virtual void detach( Entity& entity ) throw (ComponentException);
 
-	virtual void start();
+	virtual void start() throw (ComponentException);
 };
 
 } /* namespace ice */

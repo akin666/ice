@@ -17,6 +17,7 @@
 
 #include <string>
 #include <set>
+#include "componentexception.h"
 
 namespace ice
 {
@@ -41,7 +42,7 @@ namespace ice
 		void addDependency( std::string dependency );
 		void setPriority( unsigned int prio );
 	public:
-		Component( std::string name , bool concurrent = false);
+		Component( std::string name , bool concurrent = false) throw (ComponentException);
 		virtual ~Component();
 
 		void setComponentNode( ComponentNode *cn );
@@ -54,10 +55,10 @@ namespace ice
 		unsigned int getId() const;
 
 		// Figure out if this component can be before the linked component
-		virtual bool before( Component& component );
+		virtual bool before( Component& component ) throw (ComponentException);
 
 		// Generate list of components dependencies
-		virtual void getDependencyList( std::set<std::string>& list );
+		virtual void getDependencyList( std::set<std::string>& list ) throw (ComponentException);
 
 		bool isConcurrent();
 
@@ -65,13 +66,13 @@ namespace ice
 		unsigned int getPriority();
 
 		// Attach / Detach an entity to the component.
-		virtual void attach( Entity& entity ) = 0;
-		virtual void detach( Entity& entity ) = 0;
+		virtual void attach( Entity& entity ) throw (ComponentException) = 0;
+		virtual void detach( Entity& entity ) throw (ComponentException) = 0;
 
 		// Start can be blocking, if the component wants to go singlethreaded.
 		// on multithreaded situation, it should start work packages, but not block.
 		// Once all computing is done, finish() has to be called.
-		virtual void start();
+		virtual void start() throw (ComponentException);
 
 		// finish should be called, once the thread/all the stuff the component is doing
 		// is done. Not before! Applies to singlethreaded mode too!.

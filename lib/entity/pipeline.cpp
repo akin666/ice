@@ -20,28 +20,28 @@ Pipeline::~Pipeline()
 {
 }
 
-void Pipeline::attach( Component *component )
+void Pipeline::attach( Component *component ) throw (PipelineException)
 {
 	std::lock_guard<std::mutex> lock( mutex );
 
 	net.add( component );
 }
 
-void Pipeline::attachNoSort( Component *component )
+void Pipeline::attachNoSort( Component *component ) throw (PipelineException)
 {
 	std::lock_guard<std::mutex> lock( mutex );
 
 	net.addNoSort( component );
 }
 
-void Pipeline::sort()
+void Pipeline::sort() throw (PipelineException)
 {
 	std::lock_guard<std::mutex> lock( mutex );
 
 	net.sort();
 }
 
-void Pipeline::run()
+void Pipeline::run() throw (PipelineException)
 {
 	// Launch each component,
 	std::lock_guard<std::mutex> lock( mutex );

@@ -14,6 +14,7 @@
 #include <fixes/thread>
 #include "componentnet"
 #include <threadpool/tque>
+#include "pipelineexception"
 
 namespace ice
 {
@@ -33,12 +34,12 @@ namespace ice
 		Pipeline();
 		virtual ~Pipeline();
 
-		void attach( Component *component );
-		void attachNoSort( Component *component );
-		void sort( );
+		void attach( Component *component ) throw (PipelineException);
+		void attachNoSort( Component *component ) throw (PipelineException);
+		void sort( ) throw (PipelineException);
 
 		// Run is the heart of the pipeline, it is essentially the main-loop.
-		void run();
+		void run() throw (PipelineException);
 	};
 } /* namespace ice */
 #endif /* PIPELINE_H_ */

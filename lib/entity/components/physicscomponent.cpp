@@ -12,7 +12,7 @@
 namespace ice
 {
 
-PhysicsComponent::PhysicsComponent()
+PhysicsComponent::PhysicsComponent() throw (ComponentException)
 : CCComponent( COMPONENT_PHYSICS_NAME ),
   work( *this ),
   gravity( 0.0981f ), // gravity affecting a gram per second.
@@ -30,7 +30,7 @@ PhysicsComponent::~PhysicsComponent()
 {
 }
 
-void PhysicsComponent::attach( Entity& entity )
+void PhysicsComponent::attach( Entity& entity ) throw (ComponentException)
 {
 	timeProperty->attach( entity );
 	forceProperty->attach( entity );
@@ -40,7 +40,7 @@ void PhysicsComponent::attach( Entity& entity )
 	entities.push_back( entity.id );
 }
 
-void PhysicsComponent::detach( Entity& entity )
+void PhysicsComponent::detach( Entity& entity ) throw (ComponentException)
 {
 	for( std::deque<EntityKey>::iterator iter = entities.begin() ; iter != entities.end() ; ++iter )
 	{
@@ -52,7 +52,7 @@ void PhysicsComponent::detach( Entity& entity )
 	}
 }
 
-void PhysicsComponent::start()
+void PhysicsComponent::start() throw (ComponentException)
 {
 	// Run physics to the specified components.
 	// using time etc. that they got.

@@ -27,13 +27,13 @@ void Component::addDependency( std::string dependency )
 }
 
 // Generate list of components dependencies
-void Component::getDependencyList( std::set<std::string>& list )
+void Component::getDependencyList( std::set<std::string>& list ) throw (ComponentException)
 {
 	list = dependencies;
 }
 
 // Figure out if this component can be before the linked component
-bool Component::before( Component& component )
+bool Component::before( Component& component ) throw (ComponentException)
 {
 	std::string other = component.getName();
 	for( std::set<std::string>::iterator iter = dependencies.begin() ; iter != dependencies.end() ; ++iter )
@@ -66,7 +66,7 @@ unsigned int Component::getPriority()
 	return priority;
 }
 
-Component::Component( std::string name , bool concurrent )
+Component::Component( std::string name , bool concurrent ) throw (ComponentException)
 : id( getNewId() ),
   name( name ),
   concurrent( concurrent ),
@@ -100,7 +100,7 @@ bool Component::isConcurrent()
 	return concurrent;
 }
 
-void Component::start()
+void Component::start() throw (ComponentException)
 {
 	finish();
 }

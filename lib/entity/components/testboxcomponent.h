@@ -26,13 +26,13 @@ protected:
 	PositionProperty *positionProperty;
 
 public:
-	TestBoxComponent();
+	TestBoxComponent() throw (ComponentException);
 	virtual ~TestBoxComponent();
 
-	virtual void attach( Entity& entity );
-	virtual void detach( Entity& entity );
+	virtual void attach( Entity& entity ) throw (ComponentException);
+	virtual void detach( Entity& entity ) throw (ComponentException);
 
-	virtual void start();
+	virtual void start() throw (ComponentException);
 };
 
 } /* namespace ice */

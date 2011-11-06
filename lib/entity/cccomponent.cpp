@@ -11,7 +11,7 @@
 namespace ice
 {
 
-CCComponent::CCComponent( std::string name )
+CCComponent::CCComponent( std::string name ) throw (ComponentException)
 : Component( name , true ),
   concurrent_reference_counting( 0 )
 {
@@ -21,7 +21,7 @@ CCComponent::~CCComponent()
 {
 }
 
-void CCComponent::schedule( ComponentWork& work )
+void CCComponent::schedule( ComponentWork& work ) throw (ComponentException)
 {
 	++concurrent_reference_counting;
 	Application::get()->getThreadPool().schedule( &work );

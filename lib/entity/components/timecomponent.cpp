@@ -8,13 +8,12 @@
 #include "timecomponent.h"
 #include <entity/properties/timeproperty.h>
 #include <entity/storage>
-#include <sys/plattform.h>
 #include <sys/time.h>
 
 namespace ice
 {
 
-TimeComponent::TimeComponent()
+TimeComponent::TimeComponent() throw (ComponentException)
 : CCComponent( COMPONENT_TIME_NAME ),
   work( *this ),
   initialized( false )
@@ -27,14 +26,14 @@ TimeComponent::~TimeComponent()
 {
 }
 
-void TimeComponent::attach( Entity& entity )
+void TimeComponent::attach( Entity& entity ) throw (ComponentException)
 {
 	property->attach( entity );
 
 	entities.push_back( entity.id );
 }
 
-void TimeComponent::detach( Entity& entity )
+void TimeComponent::detach( Entity& entity ) throw (ComponentException)
 {
 	for( std::deque<EntityKey>::iterator iter = entities.begin() ; iter != entities.end() ; ++iter )
 	{
@@ -46,27 +45,17 @@ void TimeComponent::detach( Entity& entity )
 	}
 }
 
-unsigned int getMilliSecTime()
-{
-	//timezone zone;
-	timeval val;
-
-	gettimeofday( &val , NULL );
-
-	return (val.tv_sec * 1000.0) + ( val.tv_usec * 0.001 );
-}
-
-void TimeComponent::start()
+void TimeComponent::start() throw (ComponentException)
 {
 	if( !initialized )
 	{
-		now = getMilliSecTime();
+		now = clock.getCurrentTime();
 		initialized = true;
 	}
 
 
 	last = now;
-	now = getMilliSecTime();
+	now = clock.getCurrentTime();
 	diff = now - last;
 
 	schedule( work );

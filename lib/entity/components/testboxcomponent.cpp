@@ -8,12 +8,12 @@
 #include "testboxcomponent.h"
 #include "physicscomponent.h"
 #include <entity/storage>
-#include <sys/opengl.h>
+#include <system/opengl>
 
 namespace ice
 {
 
-TestBoxComponent::TestBoxComponent()
+TestBoxComponent::TestBoxComponent() throw (ComponentException)
 : Component( COMPONENT_TESTBOX_NAME )
 {
 	addDependency( COMPONENT_PHYSICS_NAME );
@@ -25,14 +25,14 @@ TestBoxComponent::~TestBoxComponent()
 {
 }
 
-void TestBoxComponent::attach( Entity& entity )
+void TestBoxComponent::attach( Entity& entity ) throw (ComponentException)
 {
 	positionProperty->attach( entity );
 
 	entities.push_back( entity.id );
 }
 
-void TestBoxComponent::detach( Entity& entity )
+void TestBoxComponent::detach( Entity& entity ) throw (ComponentException)
 {
 	for( std::deque<EntityKey>::iterator iter = entities.begin() ; iter != entities.end() ; ++iter )
 	{
@@ -44,7 +44,7 @@ void TestBoxComponent::detach( Entity& entity )
 	}
 }
 
-void TestBoxComponent::start()
+void TestBoxComponent::start() throw (ComponentException)
 {
 	glColor3f( 1.0f , 1.0f , 1.0f );
 	// Draw a box at entity location.
