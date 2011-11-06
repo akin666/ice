@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_APPLICATION_H_
+#include "application.h"
+#endif

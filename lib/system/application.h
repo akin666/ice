@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#ifndef APPLICATION_H_
-#define APPLICATION_H_
+#ifndef ICE_APPLICATION_H_
+#define ICE_APPLICATION_H_
 
 #include <iostream>
 #include <vector>
@@ -53,4 +53,4 @@ public:
 };
 
 } /* namespace ice */
-#endif /* APPLICATION_H_ */
+#endif /* ICE_APPLICATION_H_ */
