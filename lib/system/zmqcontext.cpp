@@ -5,7 +5,7 @@
  *      Author: akin
  */
 
-#include "zmqcontext.h"
+#include "zmqcontext"
 #include <iostream>
 
 namespace ice

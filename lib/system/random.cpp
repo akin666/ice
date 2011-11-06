@@ -5,7 +5,7 @@
  *      Author: akin
  */
 
-#include "random.h"
+#include "random"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

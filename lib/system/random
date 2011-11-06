@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_RANDOM_H_
+#include "random.h"
+#endif

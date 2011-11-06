@@ -3,12 +3,16 @@
  *
  *  Created on: 29.4.2010
  *      Author: akin
+ *
+ *      TODO!
+ *      wtf is this calss?
  */
 
-#ifndef TIMER_H_
-#define TIMER_H_
+#ifndef ICE_TIMER_H_
+#define ICE_TIMER_H_
 
-#include <datatypes/common.h>
+#include "common"
+#include "clock"
 
 namespace ice
 {
@@ -16,6 +20,7 @@ class Timer {
 protected:
 	Time val;
 	Time to;
+	Clock clock;
 public:
 	Timer();
 	virtual ~Timer();

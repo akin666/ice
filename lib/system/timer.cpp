@@ -5,8 +5,7 @@
  *      Author: akin
  */
 
-#include "timer.h"
-#include "plattform.h"
+#include "timer"
 
 namespace ice
 {
@@ -30,7 +29,7 @@ void Timer::reset()
 
 bool Timer::go()
 {
-	Time now = Plattform::getTime();
+	Time now = clock.getCurrentTime();
 
 	if( to == 0 )
 	{

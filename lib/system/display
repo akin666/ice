@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_DISPLAY_H_
+#include "display.h"
+#endif

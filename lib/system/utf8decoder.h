@@ -1,6 +1,6 @@
 
-#ifndef UTF8_DECODE_H_
-#define UTF8_DECODE_H_
+#ifndef ICE_UTF8_DECODE_H_
+#define ICE_UTF8_DECODE_H_
 
 //
 // This library decodes UTF8 std::string to unicode32 (unsigned integer) format.
@@ -8,7 +8,7 @@
 
 #include <vector>
 #include <iostream>
-#include "../datatypes/common.h"
+#include "common"
 
 namespace ice
 {

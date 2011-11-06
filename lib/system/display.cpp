@@ -5,9 +5,9 @@
  *      Author: akin
  */
 
-#include "display.h"
+#include "display"
 #include <iostream>
-#include "../asset/assetmanager.h"
+#include "global"
 
 namespace ice
 {
@@ -183,9 +183,9 @@ namespace ice
 
 	bool Display::set( Display *display )
 	{
-		if( !AssetManager<Display>::has("default") )
+		if( !Global<Display>::has("default") )
 		{
-			AssetManager<Display>::set( "default" , display );
+			Global<Display>::set( "default" , display );
 			return true;
 		}
 		return false;
@@ -193,7 +193,7 @@ namespace ice
 
 	Display *Display::get()
 	{
-		return AssetManager<Display>::get( "default" );
+		return Global<Display>::get( "default" );
 	}
 
 	void Display::setMajorVersion( int v )

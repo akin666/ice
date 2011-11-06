@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#ifndef ZMQCONTEXT_H_
-#define ZMQCONTEXT_H_
+#ifndef ICE_ZMQCONTEXT_H_
+#define ICE_ZMQCONTEXT_H_
 
 #include <zmq.hpp>
 #include <fixes/thread>

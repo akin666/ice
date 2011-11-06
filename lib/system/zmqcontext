@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_ZMQCONTEXT_H_
+#include "zmqcontext.h"
+#endif

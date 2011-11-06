@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#ifndef DISPLAY_H_
-#define DISPLAY_H_
+#ifndef ICE_DISPLAY_H_
+#define ICE_DISPLAY_H_
 
 #define DEFAULT_DPI 96
 #define DEFAULT_DISPLAY_WIDTH 800
@@ -22,7 +22,7 @@
 #define DEFAULT_DISPLAY_GL_MINOR 3
 
 #include <string>
-#include "../input/inputlistener.h"
+#include <input/inputlistener.h>
 
 namespace ice
 {

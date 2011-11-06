@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#ifndef DEFINES_H_
-#define DEFINES_H_
+#ifndef ICE_DEFINES_H_
+#define ICE_DEFINES_H_
 
 #define NO_LOGGER
 

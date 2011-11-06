@@ -5,13 +5,13 @@
  *      Author: akin
  */
 
-#include "config.h"
+#include "config"
 #include <iterator>
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "../dio/dataio.h"
-#include "../dio/filedio.h"
+#include <dio/dataio.h>
+#include <dio/filedio.h>
 
 
 namespace ice
@@ -122,10 +122,10 @@ bool Config::load( std::string path ) {
 		return false;
 	}
 
-	return loadd( file );
+	return load( file );
 }
 
-bool Config::loadd( DIO& dio ){
+bool Config::load( DIO& dio ){
 	/*
 	 * Load infested configuration that can contain comments etc. extra.
 	 *  // [whitespaces,tabs,nothing]#comment

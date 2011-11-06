@@ -6,9 +6,11 @@
  */
 
 #include "plattform.h"
+
+/*
 #include <iostream>
-#include "opengl.h"
-#include "log.h"
+#include "opengl"
+#include <log/log>
 
 namespace ice
 {
@@ -64,3 +66,4 @@ void Plattform::sleep( unsigned int ms )
 	glfwSleep( sleepTimeInSeconds );
 }
 }
+*/

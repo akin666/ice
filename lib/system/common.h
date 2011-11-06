@@ -27,6 +27,8 @@ namespace ice
     typedef unsigned char UTF8;
     typedef unsigned int Time;
     typedef unsigned int BufferIndex;
+    typedef unsigned int MicroSeconds;
+    typedef unsigned int Seconds;
 }
 
 #endif /* ICE_COMMON_H_ */

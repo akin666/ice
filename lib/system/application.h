@@ -40,7 +40,7 @@ public:
 	virtual unsigned int getUnixTime() = 0;
 	virtual ThreadPool& getThreadPool() = 0;
 	virtual Pipeline& getPipeline() = 0;
-        virtual Log& getLog() = 0;
+	virtual Log& getLog() = 0;
 
 	std::string getPath();
 	void getArg( std::vector<std::string>& args );

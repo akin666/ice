@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#ifndef RANDOM_H_
-#define RANDOM_H_
+#ifndef ICE_RANDOM_H_
+#define ICE_RANDOM_H_
 
 namespace ice
 {

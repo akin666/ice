@@ -1,12 +1,10 @@
 /*
- * system.h
- *
  *  Created on: Mar 9, 2011
  *      Author: akin
  */
 
-#ifndef SYSTEM_H_
-#define SYSTEM_H_
+#ifndef ICE_OS_H_
+#define ICE_OS_H_
 
 // oses
 #if defined(__unix__)
@@ -44,5 +42,5 @@
 #define OS_IPHONE
 #endif
 
-#endif /* SYSTEM_H_ */
+#endif /* ICE_OS_H_ */
 

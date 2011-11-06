@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_TIMER_H_
+#include "timer.h"
+#endif

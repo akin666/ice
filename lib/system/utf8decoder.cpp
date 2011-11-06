@@ -32,7 +32,7 @@ SOFTWARE.
  * just converted it to c++
  */
 
-#include "utf8decoder.h"
+#include "utf8decoder"
 
 #define UTF8_OK   0
 #define UTF8_END   -1

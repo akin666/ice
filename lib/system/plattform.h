@@ -5,10 +5,11 @@
  *      Author: akin
  */
 
-#ifndef PLATTFORM_H_
-#define PLATTFORM_H_
+#ifndef ICE_PLATTFORM_H_
+#define ICE_PLATTFORM_H_
 
-#include <datatypes/common.h>
+/*
+#include "common.h"
 #include <iostream>
 
 namespace ice
@@ -25,5 +26,6 @@ public:
 	static void sleep( unsigned int ms );
 };
 }
+*/
 
 #endif /* PLATTFORM_H_ */

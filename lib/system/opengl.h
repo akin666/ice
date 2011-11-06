@@ -1,6 +1,6 @@
 
-#ifndef OPENGL_H_
-#define OPENGL_H_
+#ifndef ICE_OPENGL_H_
+#define ICE_OPENGL_H_
 
 #include "plattform.h"
 #include "log.h"
@@ -69,4 +69,4 @@
  #define GL_TEST_ERROR(txt)
 #endif
 
-#endif /* OPENGL_H_ */
+#endif /* ICE_OPENGL_H_ */

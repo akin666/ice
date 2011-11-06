@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_OPENGL_H_
+#include "opengl.h"
+#endif

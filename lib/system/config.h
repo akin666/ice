@@ -2,15 +2,14 @@
  * cfgparser.h
  *
  *  Created on: 14.5.2009
- *      Author: UserXP
+ *      Author: akin
  */
 
-#ifndef CONFIG_H_
-#define CONFIG_H_
+#ifndef ICE_CONFIG_H_
+#define ICE_CONFIG_H_
 
 #include <iostream>
 #include <map>
-
 
 namespace ice
 {
@@ -37,10 +36,10 @@ namespace ice
 		virtual int geti( const std::string key , const int def );
 		virtual std::string gets( const std::string key , const std::string def );
 
-		bool loadd( DIO& dio );
+		bool load( DIO& dio );
 		bool load( std::string path );
 		bool save( std::string path );
 	};
 }
 
-#endif /* CFGPARSER_H_ */
+#endif /* ICE_CONFIG_H_ */

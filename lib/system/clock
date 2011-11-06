@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_CLOCK_H_
+#include "clock.h"
+#endif

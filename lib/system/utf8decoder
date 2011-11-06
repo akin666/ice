@@ -1,0 +1,7 @@
+/*
+ *      Author: akin
+ */
+
+#ifndef ICE_UTF8_DECODE_H_
+#include "utf8decoder.h"
+#endif

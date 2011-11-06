@@ -68,7 +68,7 @@ SOFTWARE.
     11111xxx       error
 */
 
-#include "../datatypes/common.h"
+#include "common"
 #include <string>
 #include <vector>
 
