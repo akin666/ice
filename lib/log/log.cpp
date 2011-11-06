@@ -27,7 +27,7 @@ public:
 
 	void setConnectPoint( std::string point );
 
-	void init();
+	bool init();
 
 	void send( unsigned char level , std::string msg );
 };
@@ -47,7 +47,7 @@ void LogClientEntity::setConnectPoint( std::string point )
 	this->protocol = point;
 }
 
-void LogClientEntity::init()
+bool LogClientEntity::init()
 {
 	if( socket == NULL )
 	{
@@ -61,14 +61,18 @@ void LogClientEntity::init()
 			std::cout << "ClientLog failed: " << t.what() << std::endl;
 			delete socket;
 			socket = NULL;
+			return false;
 		}
 		catch( ... )
 		{
 			std::cout << "ClientLog failed! For unknown reason. " << protocol << std::endl;
 			delete socket;
 			socket = NULL;
+			return false;
 		}
+		return true;
 	}
+	return false;
 }
 
 void LogClientEntity::send( unsigned char level , std::string msg )
@@ -110,7 +114,7 @@ Log::~Log( )
 	kill();
 }
 
-void Log::setProtocol( std::string protocol )
+void Log::setProtocol( std::string protocol ) throw (LogException)
 {
 	if( lg == NULL )
 	{
@@ -120,14 +124,17 @@ void Log::setProtocol( std::string protocol )
 	GET_LG->setConnectPoint( protocol );
 }
 
-void Log::init()
+void Log::init() throw (LogException)
 {
 	if( lg == NULL )
 	{
 		LogClientEntity *lce = new LogClientEntity;
 		lg = lce;
 	}
-	GET_LG->init();
+	if( !GET_LG->init() )
+	{
+		throw LogException( "Failed to initialize log." );
+	}
 
 	fire( Notification , "Logger registered." );
 }

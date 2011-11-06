@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#ifndef STORAGE_H_
-#define STORAGE_H_
+#ifndef ICE_STORAGE_H_
+#define ICE_STORAGE_H_
 
 #include "property"
 #include "component"
@@ -16,150 +16,149 @@
 
 namespace ice
 {
+	class Storage
+	{
+	private:
+		static std::deque< Property *> properties;
+		static std::deque< Component *> components;
 
-class Storage
-{
-private:
-	static std::deque< Property *> properties;
-	static std::deque< Component *> components;
+		static std::map< std::string , Component * > component_str;
+		static std::map< std::string , Property * > property_str;
 
-	static std::map< std::string , Component * > component_str;
-	static std::map< std::string , Property * > property_str;
+		static std::map< unsigned int , Component * > component_uint;
+		static std::map< unsigned int , Property * > property_uint;
+	public:
+		static Property& getProperty( std::string name );
 
-	static std::map< unsigned int , Component * > component_uint;
-	static std::map< unsigned int , Property * > property_uint;
-public:
-	static Property& getProperty( std::string name );
+		static Component& getComponent( std::string name );
 
-	static Component& getComponent( std::string name );
+		static Property& getProperty( unsigned int id );
 
-	static Property& getProperty( unsigned int id );
+		static Component& getComponent( unsigned int id );
 
-	static Component& getComponent( unsigned int id );
+		template<class ctype>
+		static ctype& getProperty( std::string name );
+
+		template<class ctype>
+		static ctype& getComponent( std::string name );
+
+		template<class ctype>
+		static ctype& getProperty( unsigned int id );
+
+		template<class ctype>
+		static ctype& getComponent( unsigned int id );
+
+		static bool hasProperty( std::string name );
+		static bool hasComponent( std::string name );
+
+		static bool hasProperty( unsigned int id );
+		static bool hasComponent( unsigned int id );
+
+		static void add( Component *component );
+		static void add( Property *property );
+
+		template <class PropertyType>
+		static PropertyType *createProperty( std::string name );
+	};
+
 
 	template<class ctype>
-	static ctype& getProperty( std::string name );
+	ctype& Storage::getProperty( std::string name )
+	{
+		std::map< std::string , Property * >::iterator iter = property_str.find( name );
+
+		if( iter == property_str.end() )
+		{
+			throw;
+		}
+
+		ctype *conv = dynamic_cast<ctype*>( iter->second );
+
+		if( conv == NULL )
+		{
+			throw;
+		}
+
+		return *conv;
+	}
 
 	template<class ctype>
-	static ctype& getComponent( std::string name );
+	ctype& Storage::getComponent( std::string name )
+	{
+		std::map< std::string , Component * >::iterator iter = component_str.find( name );
+
+		if( iter == component_str.end() )
+		{
+			throw;
+		}
+
+		ctype *conv = dynamic_cast<ctype*>( iter->second );
+
+		if( conv == NULL )
+		{
+			throw;
+		}
+
+		return *conv;
+	}
 
 	template<class ctype>
-	static ctype& getProperty( unsigned int id );
+	ctype& Storage::getProperty( unsigned int id )
+	{
+		std::map< unsigned int , Property * >::iterator iter = property_uint.find( id );
+
+		if( iter == property_uint.end() )
+		{
+			throw;
+		}
+
+		ctype *conv = dynamic_cast<ctype*>( iter->second );
+
+		if( conv == NULL )
+		{
+			throw;
+		}
+
+		return *conv;
+	}
 
 	template<class ctype>
-	static ctype& getComponent( unsigned int id );
+	ctype& Storage::getComponent( unsigned int id )
+	{
+		std::map< unsigned int , Component * >::iterator iter = component_uint.find( id );
 
-	static bool hasProperty( std::string name );
-	static bool hasComponent( std::string name );
+		if( iter == component_uint.end() )
+		{
+			throw;
+		}
 
-	static bool hasProperty( unsigned int id );
-	static bool hasComponent( unsigned int id );
+		ctype *conv = dynamic_cast<ctype*>( iter->second );
 
-	static void add( Component *component );
-	static void add( Property *property );
+		if( conv == NULL )
+		{
+			throw;
+		}
+
+		return *conv;
+	}
 
 	template <class PropertyType>
-	static PropertyType *createProperty( std::string name );
-};
-
-
-template<class ctype>
-ctype& Storage::getProperty( std::string name )
-{
-	std::map< std::string , Property * >::iterator iter = property_str.find( name );
-
-	if( iter == property_str.end() )
+	PropertyType *Storage::createProperty( std::string name )
 	{
-		throw;
+		std::map< std::string , Property * >::iterator iter = property_str.find( name );
+
+		PropertyType *ret;
+		if( iter == property_str.end() )
+		{
+			ret = new PropertyType;
+			add( ret );
+		}
+		else
+		{
+			ret = dynamic_cast<PropertyType*>( iter->second );
+		}
+		return ret;
 	}
-
-	ctype *conv = dynamic_cast<ctype*>( iter->second );
-
-	if( conv == NULL )
-	{
-		throw;
-	}
-
-	return *conv;
-}
-
-template<class ctype>
-ctype& Storage::getComponent( std::string name )
-{
-	std::map< std::string , Component * >::iterator iter = component_str.find( name );
-
-	if( iter == component_str.end() )
-	{
-		throw;
-	}
-
-	ctype *conv = dynamic_cast<ctype*>( iter->second );
-
-	if( conv == NULL )
-	{
-		throw;
-	}
-
-	return *conv;
-}
-
-template<class ctype>
-ctype& Storage::getProperty( unsigned int id )
-{
-	std::map< unsigned int , Property * >::iterator iter = property_uint.find( id );
-
-	if( iter == property_uint.end() )
-	{
-		throw;
-	}
-
-	ctype *conv = dynamic_cast<ctype*>( iter->second );
-
-	if( conv == NULL )
-	{
-		throw;
-	}
-
-	return *conv;
-}
-
-template<class ctype>
-ctype& Storage::getComponent( unsigned int id )
-{
-	std::map< unsigned int , Component * >::iterator iter = component_uint.find( id );
-
-	if( iter == component_uint.end() )
-	{
-		throw;
-	}
-
-	ctype *conv = dynamic_cast<ctype*>( iter->second );
-
-	if( conv == NULL )
-	{
-		throw;
-	}
-
-	return *conv;
-}
-
-template <class PropertyType>
-PropertyType *Storage::createProperty( std::string name )
-{
-	std::map< std::string , Property * >::iterator iter = property_str.find( name );
-
-	PropertyType *ret;
-	if( iter == property_str.end() )
-	{
-		ret = new PropertyType;
-		add( ret );
-	}
-	else
-	{
-		ret = dynamic_cast<PropertyType*>( iter->second );
-	}
-	return ret;
-}
 
 } /* namespace ice */
 #endif /* STORAGE_H_ */

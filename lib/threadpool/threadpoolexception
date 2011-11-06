@@ -1,0 +1,4 @@
+
+#ifndef ICE_THREADPOOLEXCEPTION_H_
+#include "threadpoolexception.h"
+#endif

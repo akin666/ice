@@ -1,4 +1,4 @@
 
-#ifndef COMPONENTNET_H_
+#ifndef ICE_COMPONENTNET_H_
 #include "componentnet.h"
 #endif

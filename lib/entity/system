@@ -2,15 +2,17 @@
 #ifndef ENTITY_COMPONEN_SYSTEM_HEAD_
 #define ENTITY_COMPONEN_SYSTEM_HEAD_
 
-#include "component"
 #include "cccomponent"
+#include "component"
+#include "componentexception"
 #include "componentnet"
 #include "componentnode"
 #include "componentwork"
 #include "entity"
+#include "entityfactory"
 #include "property"
 #include "pipeline"
-#include "stage"
+#include "pipelineexception"
 #include "storage"
 
 #endif

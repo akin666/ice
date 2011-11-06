@@ -180,7 +180,7 @@ LogServer::~LogServer()
 	kill();
 }
 
-void LogServer::init( std::string filename , std::string protocol )
+void LogServer::init( std::string filename , std::string protocol ) throw (LogException)
 {
 	if( server == NULL )
 	{

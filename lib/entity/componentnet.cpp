@@ -5,7 +5,7 @@
  *      Author: akin
  */
 
-#include "componentnet.h"
+#include "componentnet"
 #include "componentnode"
 
 namespace ice

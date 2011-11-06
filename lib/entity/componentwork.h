@@ -5,28 +5,26 @@
  *      Author: akin
  */
 
-#ifndef COMPONENTWORK_H_
-#define COMPONENTWORK_H_
+#ifndef ICE_COMPONENTWORK_H_
+#define ICE_COMPONENTWORK_H_
 
 #include <threadpool/work>
 
 namespace ice
 {
+	class CCComponent;
 
-class CCComponent;
+	class ComponentWork : public Work
+	{
+	protected:
+		CCComponent& parent;
+	public:
+		ComponentWork( CCComponent& parent );
+		virtual ~ComponentWork();
 
-class ComponentWork : public Work
-{
-protected:
-	CCComponent& parent;
-public:
-	ComponentWork( CCComponent& parent );
-	virtual ~ComponentWork();
-
-	virtual bool begin() = 0;
-	virtual void run() = 0;
-	virtual void end();
-};
-
+		virtual bool begin() = 0;
+		virtual void run() = 0;
+		virtual void end();
+	};
 } /* namespace ice */
 #endif /* COMPONENTWORK_H_ */

@@ -1,4 +1,4 @@
 
-#ifndef COMPONENTWORK_H_
+#ifndef ICE_COMPONENTWORK_H_
 #include "componentwork.h"
 #endif

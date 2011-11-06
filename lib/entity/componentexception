@@ -1,0 +1,4 @@
+
+#ifndef ICE_COMPONENTEXCEPTION_H_
+#include "componentexception.h"
+#endif

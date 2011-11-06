@@ -1,0 +1,4 @@
+
+#ifndef ICE_ENTITYFACTORY_H_
+#include "entityfactory.h"
+#endif

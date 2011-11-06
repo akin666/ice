@@ -1,0 +1,4 @@
+
+#ifndef ICE_PIPELINEEXCEPTION_H_
+#include "pipelineexception.h"
+#endif

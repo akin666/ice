@@ -27,7 +27,7 @@ Worker::~Worker()
 	}
 }
 
-void Worker::init( TQue<Work*>& wqueu , std::string loggingProtocol )
+void Worker::init( TQue<Work*>& wqueu , std::string loggingProtocol )  throw (ThreadPoolException)
 {
 	// This Sync of worker thread, and initializer, ensures that
 	// the worker really is initialized after exiting this function.
@@ -59,7 +59,14 @@ void Worker::operator()()
 	// Thread initialization/volatile/sync block
 	{
 		std::lock_guard<std::mutex> lock(mutex);
-		log.init();
+		// Todo! whattodo if log fails.
+		try	{
+			log.init();
+		}
+		catch( LogException& ex ) {
+		}
+		catch( ... ) {
+		}
 
 		if( queu == NULL )
 		{

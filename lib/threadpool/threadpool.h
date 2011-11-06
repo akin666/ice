@@ -11,6 +11,7 @@
 #include "work"
 #include "worker"
 #include "tque"
+#include "threadpoolexception"
 
 namespace ice
 {
@@ -29,7 +30,7 @@ public:
 
 	static unsigned int getHardwareThreadCount();
 
-	bool initialize( unsigned int count , std::string loggingProtocol );
+	bool initialize( unsigned int count , std::string loggingProtocol ) throw (ThreadPoolException);
 
 	void schedule( Work *work );
 

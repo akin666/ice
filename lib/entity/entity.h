@@ -5,25 +5,23 @@
  *      Author: akin
  */
 
-#ifndef ENTITY_H_
-#define ENTITY_H_
+#ifndef ICE_ENTITY_H_
+#define ICE_ENTITY_H_
 
 namespace ice
 {
+	typedef unsigned int EntityKey;
 
-typedef unsigned int EntityKey;
+	class Entity
+	{
+	protected:
+		static unsigned int s_id;
+		static unsigned int genId();
+	public:
+		Entity();
+		virtual ~Entity();
 
-class Entity
-{
-protected:
-	static unsigned int s_id;
-	static unsigned int genId();
-public:
-	Entity();
-	virtual ~Entity();
-
-	EntityKey id;
-};
-
+		EntityKey id;
+	};
 } /* namespace ice */
 #endif /* ENTITY_H_ */

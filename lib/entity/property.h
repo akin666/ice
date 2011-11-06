@@ -5,34 +5,32 @@
  *      Author: akin
  */
 
-#ifndef PROPERTY_H_
-#define PROPERTY_H_
+#ifndef ICE_PROPERTY_H_
+#define ICE_PROPERTY_H_
 
 #include <string>
 
 namespace ice
 {
+	class Entity;
 
-class Entity;
+	class Property
+	{
+	protected:
+		static unsigned int sm_id;
+		static unsigned int getNewId();
 
-class Property
-{
-protected:
-	static unsigned int sm_id;
-	static unsigned int getNewId();
+		unsigned int id;
+		std::string name;
+	public:
+		Property( std::string name );
+		virtual ~Property();
 
-	unsigned int id;
-	std::string name;
-public:
-	Property( std::string name );
-	virtual ~Property();
+		std::string getName() const;
+		unsigned int getId() const;
 
-	std::string getName() const;
-	unsigned int getId() const;
-
-	virtual void attach( Entity& entity ) = 0;
-	virtual void detach( Entity& entity ) = 0;
-};
-
+		virtual void attach( Entity& entity ) = 0;
+		virtual void detach( Entity& entity ) = 0;
+	};
 } /* namespace ice */
 #endif /* PROPERTY_H_ */

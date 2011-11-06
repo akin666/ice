@@ -32,7 +32,7 @@ ThreadPool::~ThreadPool()
 {
 }
 
-bool ThreadPool::initialize( unsigned int count , std::string loggingProtocol )
+bool ThreadPool::initialize( unsigned int count , std::string loggingProtocol ) throw (ThreadPoolException)
 {
 	if( workers == NULL )
 	{

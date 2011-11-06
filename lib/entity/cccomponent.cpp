@@ -6,7 +6,7 @@
  */
 
 #include "cccomponent"
-#include <sys/application.h>
+#include <system/application>
 
 namespace ice
 {

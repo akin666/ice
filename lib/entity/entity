@@ -1,4 +1,4 @@
 
-#ifndef ENTITY_H_
+#ifndef ICE_ENTITY_H_
 #include "entity.h"
 #endif

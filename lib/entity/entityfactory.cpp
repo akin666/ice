@@ -5,7 +5,7 @@
  *      Author: akin
  */
 
-#include "entityfactory.h"
+#include "entityfactory"
 
 namespace ice
 {

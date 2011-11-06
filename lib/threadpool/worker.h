@@ -10,8 +10,9 @@
 
 #include <fixes/thread>
 #include <string>
-#include <log/clientlog.h>
+#include <log/log>
 #include "tque"
+#include "threadpoolexception"
 
 namespace ice
 {
@@ -25,13 +26,13 @@ protected:
 
 	std::mutex mutex;
 	std::condition_variable condition;
-	ClientLog log;
+	Log log;
 	bool going;
 public:
 	Worker();
 	~Worker();
 
-	void init( TQue<Work*>& wqueu , std::string loggingProtocol );
+	void init( TQue<Work*>& wqueu , std::string loggingProtocol ) throw (ThreadPoolException);
 
 	void operator()();
 

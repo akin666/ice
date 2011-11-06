@@ -5,8 +5,8 @@
  *      Author: akin
  */
 
-#ifndef FENCECOMPONENT_H_
-#define FENCECOMPONENT_H_
+#ifndef ICE_FENCECOMPONENT_H_
+#define ICE_FENCECOMPONENT_H_
 
 #include "component"
 
@@ -16,20 +16,18 @@
 
 namespace ice
 {
+	class FenceComponent : public Component
+	{
+	public:
+		FenceComponent( std::string name );
+		virtual ~FenceComponent();
 
-class FenceComponent : public Component
-{
-public:
-	FenceComponent( std::string name );
-	virtual ~FenceComponent();
+		void addDependencyTo( std::string name );
+		void addDependencyTo( Component& c );
 
-	void addDependencyTo( std::string name );
-	void addDependencyTo( Component& c );
-
-	virtual void attach( Entity& entity );
-	virtual void detach( Entity& entity );
-};
-
+		virtual void attach( Entity& entity );
+		virtual void detach( Entity& entity );
+	};
 } /* namespace ice */
 #endif /* FENCECOMPONENT_H_ */
 

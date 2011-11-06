@@ -17,7 +17,7 @@ Work::~Work()
 {
 }
 
-void Work::setLog( ClientLog *clog )
+void Work::setLog( Log *clog )
 {
 	log = clog;
 }

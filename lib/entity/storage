@@ -1,4 +1,4 @@
 
-#ifndef STORAGE_H_
+#ifndef ICE_STORAGE_H_
 #include "storage.h"
 #endif

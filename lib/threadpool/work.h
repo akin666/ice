@@ -8,7 +8,7 @@
 #ifndef WORK_H_
 #define WORK_H_
 
-#include <log/clientlog.h>
+#include <log/log>
 
 namespace ice
 {
@@ -16,12 +16,12 @@ namespace ice
 class Work
 {
 protected:
-	ClientLog *log;
+	Log *log;
 public:
 	Work();
 	virtual ~Work();
 
-	void setLog( ClientLog *clog );
+	void setLog( Log *clog );
 
 	virtual bool begin() = 0;
 	virtual void run() = 0;

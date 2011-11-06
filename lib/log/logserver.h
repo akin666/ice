@@ -5,25 +5,24 @@
  *      Author: akin
  */
 
-#ifndef LOGSERVER_H_
-#define LOGSERVER_H_
+#ifndef ICE_LOGSERVER_H_
+#define ICE_LOGSERVER_H_
 
 #include <string>
+#include "logexception"
 
 namespace ice
 {
+	class LogServer
+	{
+	protected:
+		void *server;
+	public:
+		LogServer();
+		virtual ~LogServer();
 
-class LogServer
-{
-protected:
-	void *server;
-public:
-	LogServer();
-	virtual ~LogServer();
-
-	void init( std::string filename , std::string protocol );
-	void kill();
-};
-
+		void init( std::string filename , std::string protocol ) throw (LogException);
+		void kill();
+	};
 } /* namespace ice */
-#endif /* LOGSERVER_H_ */
+#endif /* ICE_LOGSERVER_H_ */

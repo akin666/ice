@@ -1,4 +1,4 @@
 
-#ifndef PIPELINE_H_
+#ifndef ICE_PIPELINE_H_
 #include "pipeline.h"
 #endif

@@ -1,4 +1,4 @@
 
-#ifndef FENCECOMPONENT_H_
+#ifndef ICE_FENCECOMPONENT_H_
 #include "fencecomponent.h"
 #endif

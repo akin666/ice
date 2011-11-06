@@ -1,4 +1,4 @@
 
-#ifndef PROPERTY_H_
+#ifndef ICE_PROPERTY_H_
 #include "property.h"
 #endif
