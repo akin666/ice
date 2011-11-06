@@ -9,7 +9,6 @@
 #define SIMPLEMESH_H_
 
 #include <glm/glm>
-#include "../datatypes/color.h"
 #include "texture.h"
 #include "graphics.h"
 #include "shaderprogram.h"

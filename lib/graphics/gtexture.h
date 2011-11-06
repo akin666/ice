@@ -11,9 +11,9 @@
 #define GTEXTURE_H_
 
 #include <glm/glm>
-#include <datatypes/color.h>
-#include <constants/texturefilter.h>
-#include <constants/texturewrap.h>
+#include <system/common>
+#include "texturefilter.h"
+#include "texturewrap.h"
 #include <iostream>
 #include "bufferobject.h"
 
@@ -24,8 +24,8 @@ namespace ice
 	protected:
 		glm::ivec2 dimensions;
 		glm::ivec2 newDimensions;
-		Color<float>::Mode mode;
-		Color<float>::Mode newMode;
+		ColorMode mode;
+		ColorMode newMode;
 		unsigned int glMode;
 		unsigned int bytes;
 		unsigned int texture_id;
@@ -59,7 +59,7 @@ namespace ice
 		GTexture& setHeight( int height );
 		GTexture& setDimensions( glm::ivec2 dimension );
 
-		GTexture& setColorMode( const Color<float>::Mode color );
+		GTexture& setColorMode( ColorMode color );
 
 		WrapMode getSWrapMode() const;
 		WrapMode getTWrapMode() const;
@@ -71,7 +71,7 @@ namespace ice
 
 		bool resize( glm::ivec2 newDimensions );
 
-		Color<float>::Mode getColorMode() const;
+		ColorMode getColorMode() const;
 
 		void renderSubTexture( glm::ivec2 pos , glm::ivec2 dim , const unsigned char *data );
 		void renderSubTexture( glm::ivec2 pos , glm::ivec2 dim , BufferObject& bo );

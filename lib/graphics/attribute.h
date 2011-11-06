@@ -9,7 +9,7 @@
 #define ATTRIBUTE_H_
 
 #include <iostream>
-#include <sys/opengl.h>
+#include <system/opengl>
 
 namespace ice
 {

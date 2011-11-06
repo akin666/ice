@@ -12,7 +12,7 @@
 
 namespace ice
 {
-	class PipelineException
+	class PipelineException : public Exception
 	{
 	public:
 		PipelineException( std::string msg );

@@ -7,13 +7,13 @@
 
 #include "gtexture.h"
 #include <iostream>
-#include <sys/opengl.h>
+#include <system/opengl>
 
 namespace ice
 {
 	GTexture::GTexture()
-	: mode(Color<float>::RGBA),
-	  newMode(Color<float>::RGBA),
+	: mode( RGBA ),
+	  newMode( RGBA ),
 	  glMode(GL_RGBA),
 	  bytes(4),
 	  texture_id(GL_NULL_BUFFER),
@@ -145,37 +145,37 @@ namespace ice
 
 				switch( mode )
 				{
-					case Color<float>::RGB :
+					case RGB :
 						glMode = GL_RGB;
 						bytes = 3;
 						break;
-					case Color<float>::RGBA :
+					case RGBA :
 						glMode = GL_RGBA;
 						bytes = 4;
 						break;
-					case Color<float>::ARGB :
+					case ARGB :
 						break;
-					case Color<float>::ALPHA :
+					case ALPHA :
 						glMode = GL_ALPHA;
 						bytes = 1;
 						break;
-					case Color<float>::LUMINANCE :
+					case LUMINANCE :
 						glMode = GL_LUMINANCE;
 						bytes = 1;
 						break;
-					case Color<float>::INTENSITY :
+					case INTENSITY :
 						glMode = GL_INTENSITY;
 						bytes = 1;
 						break;
-					case Color<float>::RGBA12 :
+					case RGBA12 :
 						glMode = GL_RGBA12;
 						bytes = 6;
 						break;
-					case Color<float>::RGBA16 :
+					case RGBA16 :
 						glMode = GL_RGBA16;
 						bytes = 8;
 						break;
-					case Color<float>::RGBA32 :
+					case RGBA32 :
 						break;
 					default :
 						glMode = GL_RGBA;
@@ -227,37 +227,37 @@ namespace ice
 		{
 			switch( newMode )
 			{
-				case Color<float>::RGB :
+				case RGB :
 					tMode = GL_RGB;
 					tBytes = 3;
 					break;
-				case Color<float>::RGBA :
+				case RGBA :
 					tMode = GL_RGBA;
 					tBytes = 4;
 					break;
-				case Color<float>::ARGB :
+				case ARGB :
 					break;
-				case Color<float>::ALPHA :
+				case ALPHA :
 					tMode = GL_ALPHA;
 					tBytes = 1;
 					break;
-				case Color<float>::LUMINANCE :
+				case LUMINANCE :
 					tMode = GL_LUMINANCE;
 					tBytes = 1;
 					break;
-				case Color<float>::INTENSITY :
+				case INTENSITY :
 					tMode = GL_INTENSITY;
 					tBytes = 1;
 					break;
-				case Color<float>::RGBA12 :
+				case RGBA12 :
 					tMode = GL_RGBA12;
 					tBytes = 6;
 					break;
-				case Color<float>::RGBA16 :
+				case RGBA16 :
 					tMode = GL_RGBA16;
 					tBytes = 8;
 					break;
-				case Color<float>::RGBA32 :
+				case RGBA32 :
 					break;
 				default :
 					tMode = GL_RGBA;
@@ -416,7 +416,7 @@ namespace ice
 		return *this;
 	}
 
-	GTexture& GTexture::setColorMode( Color<float>::Mode color )
+	GTexture& GTexture::setColorMode( ColorMode color )
 	{
 		newMode = color;
 
@@ -455,7 +455,7 @@ namespace ice
 		mipmapped = true;
 	}
 
-	Color<float>::Mode GTexture::getColorMode() const
+	ColorMode GTexture::getColorMode() const
 	{
 		return mode;
 	}

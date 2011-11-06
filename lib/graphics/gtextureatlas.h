@@ -11,7 +11,6 @@
 #include <glm/glm>
 #include "gtexture.h"
 #include <atlas/atlas.h>
-#include <datatypes/color.h>
 
 namespace ice
 {
@@ -25,7 +24,7 @@ namespace ice
 		GTextureAtlas();
 		virtual ~GTextureAtlas();
 
-		bool initialize( const glm::ivec2& dimensions , const int padding , const Color<float>::Mode mode = Color<float>::RGBA );
+		bool initialize( const glm::ivec2& dimensions , const int padding , ColorMode mode = RGBA );
 		bool resize( const glm::ivec2& val );
 
 		bool request( const glm::ivec2& dimensions , glm::ivec2& position );

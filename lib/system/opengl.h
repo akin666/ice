@@ -2,8 +2,7 @@
 #ifndef ICE_OPENGL_H_
 #define ICE_OPENGL_H_
 
-#include "plattform.h"
-#include "log.h"
+#include <iostream>
 
 #define NO_GLEE
 

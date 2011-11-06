@@ -29,6 +29,19 @@ namespace ice
     typedef unsigned int BufferIndex;
     typedef unsigned int MicroSeconds;
     typedef unsigned int Seconds;
+
+	enum ColorMode
+	{
+		RGB = 1,
+		RGBA = 2,
+		ARGB = 3,
+		ALPHA = 4,
+		LUMINANCE = 5,
+		INTENSITY = 6,
+		RGBA12 = 7,
+		RGBA16 = 8,
+		RGBA32 = 9
+	};
 }
 
 #endif /* ICE_COMMON_H_ */

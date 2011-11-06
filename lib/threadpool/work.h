@@ -12,21 +12,19 @@
 
 namespace ice
 {
+	class Work
+	{
+	protected:
+		Log *log;
+	public:
+		Work();
+		virtual ~Work();
 
-class Work
-{
-protected:
-	Log *log;
-public:
-	Work();
-	virtual ~Work();
+		void setLog( Log *clog );
 
-	void setLog( Log *clog );
-
-	virtual bool begin() = 0;
-	virtual void run() = 0;
-	virtual void end() = 0;
-};
-
+		virtual bool begin() = 0;
+		virtual void run() = 0;
+		virtual void end() = 0;
+	};
 } /* namespace ice */
 #endif /* WORK_H_ */

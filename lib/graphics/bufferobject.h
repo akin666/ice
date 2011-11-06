@@ -23,7 +23,6 @@
 #define BUFFEROBJECT_H_
 
 #include "graphics.h"
-#include "../constants/common.h"
 
 namespace ice
 {

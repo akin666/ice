@@ -6,7 +6,7 @@
  */
 
 #include "glfwdisplay.h"
-#include "../opengl"
+#include <system/opengl>
 #include <ui/uiframe.h>
 
 namespace ice
