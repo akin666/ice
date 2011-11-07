@@ -67,7 +67,7 @@ namespace ice
 		return id;
 	}
 
-	bool Shader::load( const unsigned char *data , int length )
+	bool Shader::load( const unsigned char *data , int length ) throw (GraphicsException)
 	{
 		switch( m_type )
 		{
@@ -147,12 +147,10 @@ namespace ice
 		glGetShaderiv(id  , GL_INFO_LOG_LENGTH , &loglen );
 		if (loglen > 0)
 		{
-			GLchar* log = new GLchar[loglen];
+			GLchar log[loglen];
 			glGetShaderInfoLog( id , loglen , NULL , log );
 
-			LOG_ERROR( std::string(log) );
-
-			delete[] log;
+			throw GraphicsException(log);
 		}
 		return false;
 	}

@@ -14,6 +14,7 @@
 #include "shader.h"
 #include "uniform.h"
 #include "attribute.h"
+#include "graphicsexception"
 
 namespace ice
 {
@@ -31,18 +32,18 @@ namespace ice
 
 		unsigned int getId();
 
-		Attribute *insertAttribute( std::string key );
-		Uniform *insertUniform( std::string key );
+		Attribute *insertAttribute( std::string key ) throw (GraphicsException);
+		Uniform *insertUniform( std::string key ) throw (GraphicsException);
 
-		Attribute *getAttribute( std::string key );
-		Uniform *getUniform( std::string key );
+		Attribute *getAttribute( std::string key ) throw (GraphicsException);
+		Uniform *getUniform( std::string key ) throw (GraphicsException);
 
-		void bind();
+		void bind() throw (GraphicsException);
 		static void bindDefault();
 
 		// Shader creation functionality:
-		void attach( Shader *piece );
-		void link();
+		void attach( Shader *piece ) throw (GraphicsException);
+		void link() throw (GraphicsException);
 
 		std::string getError();
 

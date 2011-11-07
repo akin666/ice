@@ -4,6 +4,6 @@
  */
 
 #ifndef ICE_LOGSERVER_H_
-#inclue "logserver.h"
+#include "logserver.h"
 #endif
 

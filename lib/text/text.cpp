@@ -7,7 +7,7 @@
 
 #include "text.h"
 #include "textgenerator.h"
-#include <sys/utf8decoder.h>
+#include <system/utf8decoder>
 
 namespace ice
 {

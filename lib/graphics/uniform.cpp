@@ -7,7 +7,6 @@
 
 #include "uniform.h"
 #include <system/opengl>
-#include <sys/log.h>
 #include <glm/transform>
 
 namespace ice
@@ -26,7 +25,7 @@ namespace ice
 		m_program_id = program;
 	}
 
-	void Uniform::attach( std::string name )
+	void Uniform::attach( std::string name ) throw (GraphicsException)
 	{
 		m_name = name;
 
@@ -34,7 +33,7 @@ namespace ice
 
 		if( m_uniform_id < 0 )
 		{
-			LOG_ERROR( std::string("Uniform not found ") + name );
+			throw GraphicsException( std::string("Uniform not found ") + name );
 		}
 
 		GL_TEST_ERROR("Uniform attach")

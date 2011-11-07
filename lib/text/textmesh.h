@@ -41,7 +41,7 @@ namespace ice
 
 		std::vector< glm::vec3 > vertexes;
 		std::vector< glm::vec2 > textureCoordinates;
-		std::vector< Color<float> > colors;
+		std::vector< glm::vec4 > colors;
 
 		TextMesh();
 		virtual ~TextMesh();

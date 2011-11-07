@@ -13,7 +13,7 @@ namespace ice
 {
 	TextFormat::TextFormat()
 	: pixelHeight( DEFAULT_PIXEL_HEIGHT ),
-	  color( white ),
+	  color( 1.0f , 1.0f , 1.0f , 1.0f ),
 	  italic( false ),
 	  bold( false )
 	{
@@ -36,7 +36,7 @@ namespace ice
 		pixelHeight = height;
 	}
 
-	void TextFormat::setColor( const Color<float>& val )
+	void TextFormat::setColor( const glm::vec4& val )
 	{
 		color = val;
 	}
@@ -56,7 +56,7 @@ namespace ice
 		return pixelHeight;
 	}
 
-	Color<float> TextFormat::getColor() const
+	glm::vec4 TextFormat::getColor() const
 	{
 		return color;
 	}

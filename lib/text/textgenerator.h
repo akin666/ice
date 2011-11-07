@@ -12,14 +12,14 @@
 #include <font/font.h>
 #include <vector>
 #include "textformat.h"
-#include <datatypes/color.h>
+#include <glm/glm>
 
 namespace ice
 {
 	class TextGenerator
 	{
 	public:
-		static bool create( std::vector<UNICODE>& text , Font& font , TextMesh& mesh , Color<float> color , bool bold = false , bool italic = false );
+		static bool create( std::vector<UNICODE>& text , Font& font , TextMesh& mesh , glm::vec4 color , bool bold = false , bool italic = false );
 		static bool create( std::vector<UNICODE>& text , TextFormat& format , TextMesh& mesh );
 	};
 }

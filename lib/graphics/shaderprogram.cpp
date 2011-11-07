@@ -47,37 +47,44 @@ namespace ice
 		return m_id;
 	}
 
-	Attribute *ShaderProgram::insertAttribute( std::string key )
+	Attribute *ShaderProgram::insertAttribute( std::string key ) throw (GraphicsException)
 	{
+		Attribute *att = NULL;
+
 		try
 		{
-			Attribute *att = new Attribute;
+			att = new Attribute;
 			att->setProgram( m_id );
 			att->attach( key );
 			attributes[key] = att;
+
 			return att;
 		}
 		catch( ... ) {
+			delete att;
 		}
-		return NULL;
+		throw GraphicsException("Insert attribute failed.");
 	}
 
-	Uniform *ShaderProgram::insertUniform( std::string key )
+	Uniform *ShaderProgram::insertUniform( std::string key ) throw (GraphicsException)
 	{
+		Uniform *uni = NULL;
 		try
 		{
-			Uniform *uni = new Uniform;
+			uni = new Uniform;
 			uni->setProgram( m_id );
 			uni->attach( key );
 			uniforms[key] = uni;
+
 			return uni;
 		}
 		catch( ... ) {
+			delete uni;
 		}
-		return NULL;
+		throw GraphicsException("Insert uniform failed.");
 	}
 
-	Attribute *ShaderProgram::getAttribute( std::string key )
+	Attribute *ShaderProgram::getAttribute( std::string key ) throw (GraphicsException)
 	{
 		std::map< std::string , Attribute * >::iterator iter = attributes.find( key );
 
@@ -88,7 +95,7 @@ namespace ice
 
 			if( m_fff < 0 )
 			{
-				Plattform::error(std::string("[attribute location not found] ") + key );
+				throw GraphicsException(std::string("[attribute location not found] ") + key );
 				return NULL;
 			}
 
@@ -98,7 +105,7 @@ namespace ice
 		return iter->second;
 	}
 
-	Uniform *ShaderProgram::getUniform( std::string key )
+	Uniform *ShaderProgram::getUniform( std::string key ) throw (GraphicsException)
 	{
 		std::map< std::string , Uniform * >::iterator iter = uniforms.find( key );
 
@@ -109,7 +116,7 @@ namespace ice
 
 			if( m_fff < 0 )
 			{
-				Plattform::error(std::string("[uniform location not found] ") + key );
+				throw GraphicsException(std::string("[uniform location not found] ") + key );
 				return NULL;
 			}
 
@@ -119,7 +126,7 @@ namespace ice
 		return iter->second;
 	}
 
-	void ShaderProgram::bind()
+	void ShaderProgram::bind() throw (GraphicsException)
 	{
 		glUseProgram( m_id );
 		GL_TEST_ERROR("ShaderProgram bind")
@@ -132,11 +139,11 @@ namespace ice
 	}
 
 	// Shader creation functionality:
-	void ShaderProgram::attach( Shader *piece )
+	void ShaderProgram::attach( Shader *piece ) throw (GraphicsException)
 	{
 		if( piece == NULL )
 		{
-			std::cout << "Error, cannot attach NULL shader to program" << std::endl;
+			throw GraphicsException("Error, cannot attach NULL shader to program");
 		}
 		tryCreatingShaderProgram( m_id );
 		linking = false;
@@ -145,7 +152,7 @@ namespace ice
 		GL_TEST_ERROR("ShaderProgram insert")
 	}
 
-	void ShaderProgram::link()
+	void ShaderProgram::link() throw (GraphicsException)
 	{
 		glLinkProgram( m_id );
 		GL_TEST_ERROR("ShaderProgram link")

@@ -39,7 +39,7 @@ namespace ice
 		text.getFormat().setSize( height );
 	}
 
-	void UIText::setFontColor( const Color<float>& color )
+	void UIText::setFontColor( const glm::vec4& color )
 	{
 		text.getFormat().setColor( color );
 	}

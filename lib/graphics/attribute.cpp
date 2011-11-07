@@ -24,7 +24,7 @@ namespace ice
 		m_program_id = program;
 	}
 
-	void Attribute::attach( std::string name )
+	void Attribute::attach( std::string name ) throw (GraphicsException)
 	{
 		m_name = name;
 
@@ -32,7 +32,7 @@ namespace ice
 
 		if( m_attribute_id < 0 )
 		{
-			Plattform::error(std::string("[in attribute vertex location not found] ") + name );
+			throw GraphicsException("Attribute location was not found.");
 		}
 
 		GL_TEST_ERROR("[in vertex attribute attach]")

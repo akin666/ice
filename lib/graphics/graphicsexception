@@ -1,0 +1,9 @@
+/*
+ *  Created on: 6.10.2011
+ *      Author: akin
+ */
+
+#ifndef ICE_GRAPHICSEXCEPTION_H_
+#include "graphicsexception.h"
+#endif
+

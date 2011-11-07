@@ -52,7 +52,7 @@ namespace ice
 				return false;
 			}
 
-			Texture *texture = AssetManager<Texture>::get( name );
+			Texture *texture = Global<Texture>::get( name );
 
 			// Collision,
 			// The texture already exists
@@ -62,7 +62,7 @@ namespace ice
 				return false;
 			}
 
-			TextureGroup *group = AssetManager<TextureGroup>::get( zone );
+			TextureGroup *group = Global<TextureGroup>::get( zone );
 
 			// Group does not exist.
 			// create one.
@@ -70,7 +70,7 @@ namespace ice
 			{
 				group = new TextureGroup;
 				group->initialize( 2048 , 2048 , 1 , RGBA );
-				AssetManager<TextureGroup>::set( zone , group );
+				Global<TextureGroup>::set( zone , group );
 			}
 
 			// Create texture.
@@ -88,7 +88,7 @@ namespace ice
 
 			texture->getG()->renderSubTexture( texture->getPosition() , texture->getDimension() , image_data );
 
-			AssetManager<Texture>::set( name , texture );
+			Global<Texture>::set( name , texture );
 
 			freeImageData( image_data );
 

@@ -8,7 +8,7 @@
 #include "log"
 #include <iostream>
 #include <cstdio>
-#include <sys/zmqcontext.h>
+#include <system/zmqcontext>
 
 #define GET_LG ((LogClientEntity*)lg)
 

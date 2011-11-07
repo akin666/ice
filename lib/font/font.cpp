@@ -10,7 +10,7 @@
 
 #include "font.h"
 #include <iostream>
-#include "../../dio/filedio.h"
+#include <dio/filedio>
 #include <iterator>
 
 #include <ft2build.h>
@@ -23,7 +23,7 @@
 #include <math.h>
 #include "edtaa3func.h"
 
-#include "../../sys/utf8tools.h"
+#include <system/utf8tools.h>
 #include <glm/transform>
 
 #define DEFAULT_TEXTURE_SIZE 64

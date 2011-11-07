@@ -8,8 +8,8 @@
 #include "loader.h"
 #include <vector>
 #include <system/opengl>
-#include <sys/log.h> // log
-#include <dio/filedio.h> // binary file access
+#include <log/log> // log
+#include <dio/filedio> // binary file access
 
 namespace ice
 {

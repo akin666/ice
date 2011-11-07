@@ -11,6 +11,7 @@
 #include "uicomponent.h"
 #include <font/font.h>
 #include <text/text.h>
+#include <glm/glm>
 
 namespace ice
 {
@@ -27,7 +28,7 @@ namespace ice
 		void setText( const std::vector<UNICODE>& txt );
 		void setFont( const std::string font );
 		void setFontSize( const float height );
-		void setFontColor( const Color<float>& color );
+		void setFontColor( const glm::vec4& color );
 
 		void apply();
 

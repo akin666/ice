@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <system/opengl>
+#include "graphicsexception"
 
 namespace ice
 {
@@ -24,7 +25,7 @@ namespace ice
 		virtual ~Attribute();
 
 		void setProgram( unsigned int program );
-		void attach( std::string name );
+		void attach( std::string name ) throw (GraphicsException);
 		std::string getName();
 
 		void setPointer( int size , GLenum type , void *ptr );

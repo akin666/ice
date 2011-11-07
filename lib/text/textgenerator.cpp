@@ -14,7 +14,7 @@ namespace ice
 			std::vector<UNICODE>& text ,
 			Font& font ,
 			TextMesh& mesh ,
-			Color<float> color ,
+			glm::vec4 color ,
 			bool bold ,
 			bool italic )
 	{
@@ -209,7 +209,7 @@ namespace ice
 
 	bool TextGenerator::create( std::vector<UNICODE>& text , TextFormat& format , TextMesh& mesh )
 	{
-		Font *font = AssetManager<Font>::get( format.getFontName() );
+		Font *font = Global<Font>::get( format.getFontName() );
 
 		if( font == NULL )
 		{

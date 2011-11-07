@@ -9,7 +9,7 @@
 #include <fixes/thread>
 #include <cstdio>
 #include <zmq.hpp>
-#include <sys/zmqcontext.h>
+#include <system/zmqcontext>
 
 namespace ice
 {

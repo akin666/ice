@@ -11,6 +11,7 @@
 #include <iostream>
 #include <glm/glm>
 #include "texture.h"
+#include "graphicsexception"
 
 namespace ice
 {
@@ -26,7 +27,7 @@ namespace ice
 		virtual ~Uniform();
 
 		void setProgram( unsigned int program );
-		void attach( std::string name );
+		void attach( std::string name ) throw (GraphicsException);
 		std::string getName();
 
 		void set( float v );

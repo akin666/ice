@@ -7,7 +7,7 @@
 
 #include "textmesh.h"
 #include <system/global>
-#include "../viewport/viewport.h"
+#include <graphics/viewport.h>
 
 namespace ice
 {
@@ -24,7 +24,7 @@ namespace ice
 	{
 		if( shader != NULL )
 		{
-			Viewport *ui = AssetManager<Viewport>::get("UI");
+			Viewport *ui = Global<Viewport>::get("UI");
 			if( ui == NULL )
 			{
 				return;
@@ -101,7 +101,7 @@ namespace ice
 				Graphics::once );
 
 		colorBuffer.set(
-				vertexCount * sizeof(Color<float>) ,
+				vertexCount * sizeof(glm::vec4) ,
 				&colors[0],
 				Graphics::gpu,
 				Graphics::once );

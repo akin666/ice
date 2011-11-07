@@ -9,6 +9,7 @@
 #define SHADER_H_
 
 #include <iostream>
+#include "graphicsexception"
 
 namespace ice
 {
@@ -35,7 +36,7 @@ namespace ice
 
 		unsigned int getId();
 
-		bool load( const unsigned char *data , int length );
+		bool load( const unsigned char *data , int length ) throw (GraphicsException);
 	};
 }
 
