@@ -105,6 +105,15 @@ Log& IceApplication::getLog()
 	return mlog;
 }
 
+void IceApplication::handle( Exception& e )
+{
+	log( e.getMessage() );
+	if( e.getMessage() == "fatal" )
+	{
+		kill();
+	}
+}
+
 bool IceApplication::shouldExit()
 {
 	return (state & ICEAPP_QUIT_REQ) != 0;

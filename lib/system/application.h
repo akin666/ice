@@ -14,6 +14,7 @@
 #include <threadpool/threadpool>
 #include <entity/pipeline>
 #include <log/log>
+#include "exception"
 
 namespace ice
 {
@@ -40,6 +41,8 @@ namespace ice
 		virtual ThreadPool& getThreadPool() = 0;
 		virtual Pipeline& getPipeline() = 0;
 		virtual Log& getLog() = 0;
+
+		virtual void handle( Exception& e ) = 0;
 
 		std::string getPath();
 		void getArg( std::vector<std::string>& args );

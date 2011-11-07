@@ -42,6 +42,8 @@ namespace ice
 		virtual Pipeline& getPipeline();
 		virtual Log& getLog();
 
+		virtual void handle( Exception& e );
+
 		virtual bool shouldExit();
 		virtual bool shouldRestart();
 	};

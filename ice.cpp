@@ -58,15 +58,13 @@ GLubyte indices[] = {
 
 int iceMain( int argc , char *argv[] )
 {
-	std::cout << "Ice Starting LogServer." << std::endl;
+	IceApplication *application;
+
 	std::string logPoint("inproc://log");
 	LogServer logServer;
-	logServer.init( "test.log" , logPoint );
 
-	IceApplication application( argc , argv );
-
+	// Figure out optimal thread count.
 	unsigned int hwThreadCount = ThreadPool::getHardwareThreadCount();
-
 	switch( hwThreadCount )
 	{
 		case 0 :
@@ -83,12 +81,29 @@ int iceMain( int argc , char *argv[] )
 			break; // well, if the machine has 8 HW threads, 12 should drown it.
 	}
 
-	application.initialize( logPoint , hwThreadCount );
-	Application::set( &application );
+	// Init
+	try
+	{
+		logServer.init( "test.log" , logPoint );
+
+		application = new IceApplication( argc , argv );
+
+		application->initialize( logPoint , hwThreadCount );
+
+		Application::set( application );
+	}
+	catch( Exception& e )
+	{
+		std::cout << "Failed to initialize Application: " << e.getMessage() << std::endl;
+		return -1;
+	}
+	catch( ... )
+	{
+		std::cout << "Failed to initialize Application, unknown cause!" << std::endl;
+		return -1;
+	}
 
 	// Common begin.
-	ThreadPool& pool = Application::get()->getThreadPool();
-
 	int entityCount = 10000;
 	Entity entity[entityCount];
 
@@ -112,7 +127,6 @@ int iceMain( int argc , char *argv[] )
 	double aspect = (double)w/(double)h;
 	double cube = 0.5;
 
-
 	glFrustum( // YEY this is FCKD!
 				-cube/2.0 ,
 				cube/2.0 ,
@@ -123,11 +137,8 @@ int iceMain( int argc , char *argv[] )
 		);
 
 	glMatrixMode( GL_MODELVIEW );
-
 	glTranslatef( 0 , -50 , 0 );
 
-//	NameComponent namer;
-//	MoverComponent mover;
 	TimeComponent times;
 	PhysicsComponent physics;
 	TestBoxComponent testBox;
@@ -141,14 +152,19 @@ int iceMain( int argc , char *argv[] )
 
 	for( int i = entityCount - 1 ; i >= 0 ; --i )
 	{
-		times.attach( entity[i] );
-		physics.attach( entity[i] );
-		testBox.attach( entity[i] );
+		try {
+			times.attach( entity[i] );
+			physics.attach( entity[i] );
+			testBox.attach( entity[i] );
+		}
+		catch( ComponentException& e ) {
+		}
+		catch( ... ) {
+		}
 
 		PositionProperty::Data& positionData = positionProperty->get( entity[i].id );
 		float& weight = weightProperty->get( entity[i].id );
 
-		/**/
 		positionData.position.y = random.getFloat() * 100.0f; // the thing is up to 2 meters.
 
 		positionData.position.x = random.getFloat() * 100.0f - 50.0f;
@@ -157,24 +173,45 @@ int iceMain( int argc , char *argv[] )
 		weight = 50.0f + random.getFloat() * 950.0f; // fatass weights a [50g,1kg]
 	}
 
-	pipeline.attach( &times );
-	pipeline.attach( &physics );
-	pipeline.attach( &testBox );
+	try {
+		pipeline.attach( &times );
+		pipeline.attach( &physics );
+		pipeline.attach( &testBox );
+	}
+	catch( PipelineException& e ) {
+	}
+	catch( ... ) {
+	}
 
+	// Main Loop:
+	Application *runtime;
 	do
 	{
+		runtime = Application::get();
+
 		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
-		Application::get()->getPipeline().run();
+		try {
+			runtime->getPipeline().run();
+		}
+		catch( Exception& e ) {
+			runtime->handle( e );
+		}
+		catch( ... ) {
+			runtime->kill();
+		}
+
 		glfwSwapBuffers();
 
 		if (glfwGetKey(GLFW_KEY_ESC) == GLFW_PRESS)
 		{
-			Application::get()->kill();
+			runtime->kill();
 		}
 	}
-	while( !Application::get()->shouldExit() );
+	while( !runtime->shouldExit() );
 
 	glfwTerminate();
+
+	delete application;
 
 	return 0;
 }

@@ -12,6 +12,5 @@
 
 int main( int argc , char *argv[] )
 {
-	std::cout << "WinIce starting" << std::endl;
 	return iceMain( argc , argv );
 }
