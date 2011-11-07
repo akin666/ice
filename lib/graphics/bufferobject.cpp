@@ -5,7 +5,7 @@
  */
 
 #include "bufferobject.h"
-#include <sys/opengl.h>
+#include <system/opengl>
 
 namespace ice
 {

@@ -7,7 +7,7 @@
 
 #include "loader.h"
 #include <vector>
-#include <sys/opengl.h>
+#include <system/opengl>
 #include <sys/log.h> // log
 #include <dio/filedio.h> // binary file access
 

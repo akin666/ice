@@ -25,7 +25,7 @@ namespace ice
 		atlases.clear();
 	}
 
-	bool TextureGroup::initialize( const int maxwidth , const int maxheight , const int padding , const Color<float>::Mode mode )
+	bool TextureGroup::initialize( const int maxwidth , const int maxheight , const int padding , const ColorMode mode )
 	{
 		if( !initialized )
 		{
@@ -41,7 +41,7 @@ namespace ice
 		return initialized;
 	}
 
-	bool TextureGroup::initialize( const glm::ivec2& maxsize , const int padding , const Color<float>::Mode mode )
+	bool TextureGroup::initialize( const glm::ivec2& maxsize , const int padding , const ColorMode mode )
 	{
 		return initialize( maxsize.x , maxsize.y , padding , mode );
 	}

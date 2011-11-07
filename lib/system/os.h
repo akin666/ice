@@ -16,7 +16,7 @@
 #endif
 
 // Real oses
-#if _defined(_WIN32) or defined(WIN32)
+#if defined(_WIN32) or defined(WIN32)
 #define OS_WINDOWS
 #endif
 

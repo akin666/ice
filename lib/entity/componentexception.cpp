@@ -14,7 +14,7 @@ ComponentException::ComponentException( std::string msg )
 {
 }
 
-ComponentException::~ComponentException()
+ComponentException::~ComponentException() throw()
 {
 }
 

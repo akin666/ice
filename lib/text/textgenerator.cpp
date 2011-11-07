@@ -6,7 +6,7 @@
  */
 
 #include "textgenerator.h"
-#include <asset/assetmanager.h>
+#include <system/global>
 
 namespace ice
 {

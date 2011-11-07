@@ -167,7 +167,7 @@ namespace ice
 
 		    FT_Set_Transform( ftdata.face, &matrix, NULL );
 
-			atlas.initialize( glm::ivec2( DEFAULT_TEXTURE_SIZE , DEFAULT_TEXTURE_SIZE ) , DEFAULT_TEXTURE_PADDING , Color<float>::ALPHA );
+			atlas.initialize( glm::ivec2( DEFAULT_TEXTURE_SIZE , DEFAULT_TEXTURE_SIZE ) , DEFAULT_TEXTURE_PADDING , ALPHA );
 
 			updateMatrix();
 

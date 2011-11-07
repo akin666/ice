@@ -10,7 +10,7 @@
 
 #include "textmesh.h"
 #include "textformat.h"
-#include <datatypes/common.h>
+#include <system/common>
 #include <vector>
 
 namespace ice

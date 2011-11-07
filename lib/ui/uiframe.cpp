@@ -6,7 +6,7 @@
  */
 
 #include "uiframe.h"
-#include <sys/opengl.h>
+#include <system/opengl>
 #include <glm/transform>
 
 #define MIN_DEPTH 0.0f

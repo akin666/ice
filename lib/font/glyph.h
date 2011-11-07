@@ -9,7 +9,7 @@
 #define GLYPH_H_
 
 #include <glm/glm>
-#include "../../datatypes/common.h"
+#include <system/common>
 #include <vector>
 
 namespace ice

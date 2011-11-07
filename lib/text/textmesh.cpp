@@ -6,7 +6,7 @@
  */
 
 #include "textmesh.h"
-#include <asset/assetmanager.h>
+#include <system/global>
 #include "../viewport/viewport.h"
 
 namespace ice

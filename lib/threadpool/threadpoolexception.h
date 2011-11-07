@@ -10,13 +10,13 @@
 
 #include <system/exception>
 
-namespace ice {
-
+namespace ice
+{
 	class ThreadPoolException : public Exception
 	{
 	public:
 		ThreadPoolException( std::string msg );
-		virtual ~ThreadPoolException();
+		virtual ~ThreadPoolException() throw();
 	};
 
 } /* namespace ice */

@@ -12,7 +12,6 @@
 
 #include <iostream>
 #include "diolocker"
-#include "dioreader"
 #include "dioexception"
 
 namespace ice

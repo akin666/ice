@@ -13,7 +13,7 @@ namespace ice
 {
 	TextFormat::TextFormat()
 	: pixelHeight( DEFAULT_PIXEL_HEIGHT ),
-	  color( Color<float>::white ),
+	  color( white ),
 	  italic( false ),
 	  bold( false )
 	{

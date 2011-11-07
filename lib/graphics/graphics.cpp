@@ -6,7 +6,7 @@
  */
 
 #include "graphics.h"
-#include <sys/opengl.h>
+#include <system/opengl>
 
 namespace ice
 {

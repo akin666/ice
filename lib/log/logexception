@@ -6,6 +6,6 @@
  */
 
 #ifndef ICE_LOGEXCEPTION_H_
-#inclue "logexception.h"
-#endi
+#include "logexception.h"
+#endif
 

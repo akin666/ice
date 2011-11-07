@@ -7,11 +7,11 @@
 
 #include "loader.h"
 #include <vector>
-#include <sys/opengl.h> // gl
-#include <sys/random.h> // random
+#include <system/opengl> // gl
+#include <system/random> // random
 #include <libwrapper.h> // stb_image functions
 #include <dio/filedio.h> // binary file access
-#include <asset/assetmanager.h>
+#include <system/global>
 #include "texturegroup.h"
 #include <glm/glm>
 
@@ -69,7 +69,7 @@ namespace ice
 			if( group == NULL )
 			{
 				group = new TextureGroup;
-				group->initialize( 2048 , 2048 , 1 , Color<float>::RGBA );
+				group->initialize( 2048 , 2048 , 1 , RGBA );
 				AssetManager<TextureGroup>::set( zone , group );
 			}
 
@@ -129,12 +129,12 @@ namespace ice
 				return false;
 			}
 
-			Color<float>::Mode mode = Color<float>::RGBA;
+			ColorMode mode = RGBA;
 
 			switch( channels )
 			{
-				case 4 : mode = Color<float>::RGBA; break;
-				case 3 : mode = Color<float>::RGB; break;
+				case 4 : mode = RGBA; break;
+				case 3 : mode = RGB; break;
 				default : break;
 			}
 
@@ -158,10 +158,10 @@ namespace ice
 				image_data.push_back(random->getUChar());
 			}
 
-			return loadTexture( width, height, Color<float>::RGBA , &image_data[0] );
+			return loadTexture( width, height, RGBA , &image_data[0] );
 		}
 
-		GTexture *loadTexture( const int width , const unsigned int height , const Color<float>::Mode mode , const unsigned char *data )
+		GTexture *loadTexture( const int width , const unsigned int height , const ColorMode mode , const unsigned char *data )
 		{
 			GTexture *tex = new GTexture;
 

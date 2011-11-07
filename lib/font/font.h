@@ -12,8 +12,8 @@
 #include <graphics/texture.h>
 #include "glyph.h"
 #include <map>
-#include <datatypes/common.h>
-#include <dio/dataio.h>
+#include <system/common>
+#include <dio/dio>
 
 #define FL_LINE_FEED 10
 #define FL_CARRIAGE_RETURN 13

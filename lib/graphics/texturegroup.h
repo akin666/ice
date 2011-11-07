@@ -23,14 +23,14 @@ namespace ice
 		std::vector<GTextureAtlas*> atlases;
 		glm::ivec2 max;
 		int pad;
-		Color<float>::Mode channels;
+		ColorMode channels;
 		bool initialized;
 	public:
 		TextureGroup();
 		virtual ~TextureGroup();
 
-		bool initialize( const int maxwidth = TG_DEFAULT_TEXTURE_SIZE , const int maxheight = TG_DEFAULT_TEXTURE_SIZE , const int padding = TG_DEFAULT_PAD , const Color<float>::Mode mode = Color<float>::RGBA );
-		bool initialize( const glm::ivec2& maxsize , const int padding = TG_DEFAULT_PAD , const Color<float>::Mode mode = Color<float>::RGBA );
+		bool initialize( const int maxwidth = TG_DEFAULT_TEXTURE_SIZE , const int maxheight = TG_DEFAULT_TEXTURE_SIZE , const int padding = TG_DEFAULT_PAD , const ColorMode mode = RGBA );
+		bool initialize( const glm::ivec2& maxsize , const int padding = TG_DEFAULT_PAD , const ColorMode mode = RGBA );
 
 		bool request( Texture& texture );
 	};

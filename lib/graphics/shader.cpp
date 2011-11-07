@@ -6,7 +6,7 @@
  */
 
 #include "shader.h"
-#include <sys/opengl.h>
+#include <system/opengl>
 
 #define NULL_SHADER 0
 

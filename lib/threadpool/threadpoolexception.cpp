@@ -14,7 +14,7 @@ ThreadPoolException::ThreadPoolException( std::string msg )
 {
 }
 
-ThreadPoolException::~ThreadPoolException()
+ThreadPoolException::~ThreadPoolException() throw()
 {
 }
 

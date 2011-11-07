@@ -7,7 +7,7 @@
 
 #include "shaderprogram.h"
 
-#include <sys/opengl.h>
+#include <system/opengl>
 #include <iostream>
 #include <vector>
 #include "attribute.h"

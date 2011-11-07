@@ -15,7 +15,7 @@ PipelineException::PipelineException( std::string msg )
 {
 }
 
-PipelineException::~PipelineException()
+PipelineException::~PipelineException() throw()
 {
 }
 

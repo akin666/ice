@@ -16,7 +16,7 @@ namespace ice
 	{
 	public:
 		DIOException( std::string msg );
-		virtual ~DIOException();
+		virtual ~DIOException() throw();
 	};
 
 } /* namespace ice */

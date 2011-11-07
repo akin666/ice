@@ -6,6 +6,6 @@
  */
 
 #ifndef ICE_LOG_H_
-#inclue "log.h"
+#include "log.h"
 #endif /* ICE_LOG_H_ */
 

@@ -15,7 +15,7 @@ LogException::LogException( std::string str )
 {
 }
 
-LogException::~LogException()
+LogException::~LogException() throw()
 {
 }
 

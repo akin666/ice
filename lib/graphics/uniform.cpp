@@ -6,7 +6,7 @@
  */
 
 #include "uniform.h"
-#include <sys/opengl.h>
+#include <system/opengl>
 #include <sys/log.h>
 #include <glm/transform>
 

@@ -19,21 +19,21 @@ FenceComponent::~FenceComponent()
 {
 }
 
-void FenceComponent::addDependencyTo( std::string name )
+void FenceComponent::addDependencyTo( std::string name ) throw (ComponentException)
 {
 	addDependency( name );
 }
 
-void FenceComponent::addDependencyTo( Component& c )
+void FenceComponent::addDependencyTo( Component& c ) throw (ComponentException)
 {
 	addDependency( c.getName() );
 }
 
-void FenceComponent::attach( Entity& entity )
+void FenceComponent::attach( Entity& entity ) throw (ComponentException)
 {
 }
 
-void FenceComponent::detach( Entity& entity )
+void FenceComponent::detach( Entity& entity ) throw (ComponentException)
 {
 }
 

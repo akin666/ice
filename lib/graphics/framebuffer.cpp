@@ -6,7 +6,7 @@
  */
 
 #include "framebuffer.h"
-#include <sys/opengl.h>
+#include <system/opengl>
 #include "gtexture.h"
 
 namespace ice

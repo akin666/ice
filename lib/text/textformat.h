@@ -8,7 +8,7 @@
 #ifndef TEXTFORMAT_H_
 #define TEXTFORMAT_H_
 
-#include <datatypes/color.h>
+#include <glm/glm>
 #include <string>
 
 namespace ice
@@ -17,7 +17,7 @@ namespace ice
 	{
 	protected:
 		float pixelHeight;
-		Color<float> color;
+		glm::vec4 color;
 		bool italic;
 		bool bold;
 		std::string font;
@@ -27,13 +27,13 @@ namespace ice
 		virtual ~TextFormat();
 
 		void setSize( const float height );
-		void setColor( const Color<float>& val );
+		void setColor( const glm::vec4& val );
 		void setItalic( const bool val );
 		void setBold( const bool val );
 		void setFont( const std::string fontName );
 
 		float getSize() const;
-		Color<float> getColor() const;
+		glm::vec4 getColor() const;
 		bool getItalic() const;
 		bool getBold() const;
 		std::string getFontName() const;

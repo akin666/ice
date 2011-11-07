@@ -6,7 +6,7 @@
  */
 
 #include "simplemesh.h"
-#include <sys/opengl.h>
+#include <system/opengl>
 #include <iostream>
 
 namespace ice

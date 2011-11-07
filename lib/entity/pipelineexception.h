@@ -16,7 +16,7 @@ namespace ice
 	{
 	public:
 		PipelineException( std::string msg );
-		virtual ~PipelineException();
+		virtual ~PipelineException() throw();
 	};
 } /* namespace ice */
 #endif /* PIPELINEEXCEPTION_H_ */

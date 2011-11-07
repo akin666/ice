@@ -14,7 +14,7 @@ DIOException::DIOException( std::string msg )
 {
 }
 
-DIOException::~DIOException()
+DIOException::~DIOException() throw()
 {
 }
 

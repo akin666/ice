@@ -16,7 +16,7 @@ namespace ice
 	{
 	public:
 		LogException( std::string str );
-		virtual ~LogException();
+		virtual ~LogException() throw();
 	};
 } /* namespace ice */
 #endif /* LOGEXCEPTION_H_ */

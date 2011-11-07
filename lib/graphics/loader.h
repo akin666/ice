@@ -11,7 +11,7 @@
 #include "gtexture.h"
 #include "shader.h"
 #include <font/font.h>
-#include <dio/dataio.h>
+#include <dio/dio>
 
 namespace ice
 {
@@ -29,7 +29,7 @@ namespace ice
 		bool loadTexture( const std::string zone , const std::string name , DIO& dio , int length );
 
 		// The ownership of unsigned char data DOES NOT transfer here
-		GTexture *loadTexture( const int width , const unsigned int height , const Color<float>::Mode mode  , const unsigned char *data );
+		GTexture *loadTexture( const int width , const unsigned int height , const ColorMode mode  , const unsigned char *data );
 
 		// Shader
 		Shader *loadShader( const Shader::Type type , const std::string path );

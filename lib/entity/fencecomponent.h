@@ -22,11 +22,11 @@ namespace ice
 		FenceComponent( std::string name );
 		virtual ~FenceComponent();
 
-		void addDependencyTo( std::string name );
-		void addDependencyTo( Component& c );
+		void addDependencyTo( std::string name ) throw (ComponentException);
+		void addDependencyTo( Component& c ) throw (ComponentException);
 
-		virtual void attach( Entity& entity );
-		virtual void detach( Entity& entity );
+		virtual void attach( Entity& entity ) throw (ComponentException);
+		virtual void detach( Entity& entity ) throw (ComponentException);
 	};
 } /* namespace ice */
 #endif /* FENCECOMPONENT_H_ */

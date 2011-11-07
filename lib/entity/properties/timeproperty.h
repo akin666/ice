@@ -10,7 +10,7 @@
 
 #include <entity/property>
 #include <entity/entity>
-#include <datatypes/common.h>
+#include <system/common>
 #include <map>
 
 #define PROPERTY_TIME_NAME "time"

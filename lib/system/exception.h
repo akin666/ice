@@ -14,7 +14,7 @@ namespace ice
 	public:
 		Exception(std::string msg);
 		Exception(const Exception& other);
-		virtual ~Exception() throw ();
+		virtual ~Exception() throw();
 
 		virtual std::string getMessage();
 	};

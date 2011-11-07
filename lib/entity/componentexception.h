@@ -16,7 +16,7 @@ namespace ice
 	{
 	public:
 		ComponentException( std::string msg );
-		virtual ~ComponentException();
+		virtual ~ComponentException() throw();
 	};
 } /* namespace ice */
 #endif /* COMPONENTEXCEPTION_H_ */

@@ -18,7 +18,7 @@ namespace ice
 	{
 	}
 
-	bool GTextureAtlas::initialize( const glm::ivec2& dimensions , const int padding , const Color<float>::Mode mode )
+	bool GTextureAtlas::initialize( const glm::ivec2& dimensions , const int padding , const ColorMode mode )
 	{
 		if( !initialized )
 		{
