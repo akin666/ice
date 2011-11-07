@@ -13,17 +13,7 @@
 #include <graphics/gtexture.h>
 #include <graphics/simplemesh.h>
 #include <text/textgenerator.h>
-//#include "core/vm/machine.h"
 #include <SLB/SLB.hpp>
-//#include "corescript/commonscript.h"
-#include <ui/uiframe.h>
-#include <ui/uicomponent.h>
-#include <ui/uiimage.h>
-#include <ui/uicontainer.h>
-#include <ui/uiarea.h>
-#include <ui/uibutton.h>
-#include <ui/uiwindow.h>
-#include <ui/uitext.h>
 #include <system/global>
 
 #include <glm/glm>
@@ -33,9 +23,6 @@
 
 #include <entity/pipeline>
 #include <entity/entity>
-
-//#include "test/namecomponent.h"
-//#include "test/movercomponent.h"
 
 #include <entity/components/physicscomponent.h>
 #include <entity/components/timecomponent.h>
