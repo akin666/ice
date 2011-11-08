@@ -22,6 +22,16 @@ Entity::Entity()
 {
 }
 
+Entity::Entity( const Entity& other )
+: id( other.id )
+{
+}
+
+Entity::Entity( EntityKey key )
+: id( key )
+{
+}
+
 Entity::~Entity()
 {
 }

@@ -1,0 +1,4 @@
+
+#ifndef ICE_ENTITYTEMPLATE_H_
+#include "entitytemplate.h"
+#endif

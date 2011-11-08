@@ -1,0 +1,4 @@
+
+#ifndef ICE_MUTABLEENTITYTEMPLATE_H_
+#include "mutableentitytemplate.h"
+#endif

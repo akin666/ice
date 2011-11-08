@@ -19,6 +19,8 @@ namespace ice
 		static unsigned int genId();
 	public:
 		Entity();
+		Entity( const Entity& other );
+		Entity( EntityKey key );
 		virtual ~Entity();
 
 		EntityKey id;

@@ -33,6 +33,7 @@
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\zeromq-3.0.1\include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\glfw.bin.WIN32\include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\boost_1_47_0&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/bullet/src}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.optimization.level.1437338929" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.2081099144" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
@@ -48,6 +49,7 @@
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\glfw.bin.WIN32\include\freetype2&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\zeromq-3.0.1\include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\boost_1_47_0&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/bullet/src}&quot;"/>
 								</option>
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1762609426" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.1595914213" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
@@ -61,12 +63,16 @@
 									<listOptionValue builtIn="false" value="freetype"/>
 									<listOptionValue builtIn="false" value="zmq"/>
 									<listOptionValue builtIn="false" value="boost_thread-mgw45-mt-1_47"/>
+									<listOptionValue builtIn="false" value="BulletCollision"/>
+									<listOptionValue builtIn="false" value="BulletDynamics"/>
+									<listOptionValue builtIn="false" value="LinearMath"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.1422986295" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\glfw.bin.WIN32\lib-mingw&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\boost_1_47_0\stage\lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\glfw.bin.WIN32\lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\zeromq-3.0.1\lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/bullet/lib}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1245306956" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -109,6 +115,7 @@
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\glfw.bin.WIN32\include\freetype2&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\zeromq-3.0.1\include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\boost_1_47_0&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/bullet/src}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1936728137" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -124,6 +131,7 @@
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\zeromq-3.0.1\include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\glfw.bin.WIN32\include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\boost_1_47_0&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/bullet/src}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.634378310" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -134,6 +142,7 @@
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\boost_1_47_0\stage\lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\glfw.bin.WIN32\lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\cpp-libs\zeromq-3.0.1\lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/bullet/lib}&quot;"/>
 								</option>
 								<option id="gnu.cpp.link.option.libs.1898204844" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="glfw"/>
@@ -141,6 +150,9 @@
 									<listOptionValue builtIn="false" value="freetype"/>
 									<listOptionValue builtIn="false" value="zmq"/>
 									<listOptionValue builtIn="false" value="boost_thread-mgw45-mt-1_47"/>
+									<listOptionValue builtIn="false" value="BulletCollision"/>
+									<listOptionValue builtIn="false" value="BulletDynamics"/>
+									<listOptionValue builtIn="false" value="LinearMath"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.914732901" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
