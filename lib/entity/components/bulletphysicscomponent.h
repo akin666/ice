@@ -17,6 +17,8 @@
 #include <entity/properties/positionproperty.h>
 #include <entity/properties/weightproperty.h>
 
+#define COMPONENT_BULLET_PHYSICS_NAME "bulletphysics"
+
 namespace ice
 {
 

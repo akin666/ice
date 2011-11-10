@@ -13,7 +13,7 @@ namespace ice
 {
 
 BulletPhysicsComponent::BulletPhysicsComponent() throw (ComponentException)
-: Component( "BulletPhysicsComponent" )
+: Component( COMPONENT_BULLET_PHYSICS_NAME )
 {
 	addDependency( COMPONENT_TIME_NAME );
 
