@@ -46,4 +46,27 @@ std::map< unsigned int , Time >& TimeProperty::getTime()
 	return timeData;
 }
 
+void TimeProperty::setCurrentTime( Time time )
+{
+	last = current;
+	current = time;
+
+	diff = current - last;
+}
+
+Time TimeProperty::getDiff()
+{
+	return diff;
+}
+
+Time TimeProperty::getNow()
+{
+	return current;
+}
+
+Time TimeProperty::getPrevious()
+{
+	return last;
+}
+
 } /* namespace ice */

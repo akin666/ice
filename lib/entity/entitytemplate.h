@@ -14,9 +14,18 @@ namespace ice
 {
 	class EntityTemplate
 	{
+	protected:
+		static unsigned int s_id;
+		static unsigned int genId();
+		unsigned int sm_id;
+
+		std::string name;
 	public:
-		EntityTemplate();
+		EntityTemplate( std::string name = "" );
 		virtual ~EntityTemplate();
+
+		std::string getName();
+		unsigned int getId() const;
 
 		Entity create();
 		virtual void attach( Entity& entity );

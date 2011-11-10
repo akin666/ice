@@ -50,6 +50,7 @@ void TimeComponent::start() throw (ComponentException)
 	if( !initialized )
 	{
 		now = clock.getCurrentTime();
+		property->setCurrentTime( now );
 		initialized = true;
 	}
 
@@ -57,6 +58,8 @@ void TimeComponent::start() throw (ComponentException)
 	last = now;
 	now = clock.getCurrentTime();
 	diff = now - last;
+
+	property->setCurrentTime( now );
 
 	schedule( work );
 }

@@ -18,11 +18,13 @@ namespace ice
 class MutableEntityTemplate : public EntityTemplate
 {
 protected:
-	std::deque<Component&> components;
-	std::deque<EntityTemplate&> templates;
+	std::deque<Component*> components;
+	std::deque<EntityTemplate*> templates;
 public:
-	MutableEntityTemplate();
+	MutableEntityTemplate( std::string name = "" );
 	virtual ~MutableEntityTemplate();
+
+	void setName( std::string name );
 
 	void attach( Component& component );
 	void attach( EntityTemplate& tpl );

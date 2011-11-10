@@ -10,12 +10,31 @@
 namespace ice
 {
 
-EntityTemplate::EntityTemplate()
+unsigned int EntityTemplate::s_id = 1;
+
+unsigned int EntityTemplate::genId()
+{
+	return s_id++;
+}
+
+EntityTemplate::EntityTemplate( std::string name )
+: name( name ),
+  sm_id( genId() )
 {
 }
 
 EntityTemplate::~EntityTemplate()
 {
+}
+
+std::string EntityTemplate::getName()
+{
+	return name;
+}
+
+unsigned int EntityTemplate::getId() const
+{
+	return sm_id;
 }
 
 Entity EntityTemplate::create()

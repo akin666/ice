@@ -10,31 +10,69 @@
 
 #include <btBulletDynamicsCommon.h>
 #include <map>
+#include <deque>
+#include "../component"
+#include <entity/properties/timeproperty.h>
+#include <entity/properties/forceproperty.h>
+#include <entity/properties/positionproperty.h>
+#include <entity/properties/weightproperty.h>
 
 namespace ice
 {
 
-class BulletPhysicsComponent : public CCComponent
+class BulletPhysicsComponent : public Component
 {
 protected:
-	// World
-	btDynamicsWorld* m_dynamicsWorld;
 
+	class BPData {
+	public:
+		btCollisionShape* shape;
+		btDefaultMotionState* motionState;
+		btRigidBody* body;
 
+		BPData()
+		: shape( NULL ),
+		  motionState( NULL ),
+		  body( NULL )
+		{
+		}
+
+		BPData( const BPData& other )
+		: shape( other.shape ),
+		  motionState( other.motionState ),
+		  body( other.body )
+		{
+		}
+	};
+
+	///collision configuration contains default setup for memory, collision setup. Advanced users can create their own configuration.
+	btDefaultCollisionConfiguration* collisionConfiguration;
+
+	///use the default collision dispatcher. For parallel processing you can use a diffent dispatcher (see Extras/BulletMultiThreaded)
+	btCollisionDispatcher* dispatcher;
+
+	///btDbvtBroadphase is a good general purpose broadphase. You can also try out btAxis3Sweep.
+	btBroadphaseInterface* overlappingPairCache;
+
+	///the default constraint solver. For parallel processing you can use a different solver (see Extras/BulletMultiThreaded)
+	btSequentialImpulseConstraintSolver* solver;
+
+	// world
+	btDiscreteDynamicsWorld* dynamicsWorld;
+
+	// Plane
+	BPData ground;
+
+	// Shapes
+	btAlignedObjectArray<btCollisionShape*> collisionShapes;
 
 	std::deque<EntityKey> entities;
 
+	std::map< EntityKey , BPData > pdata;
+
 	TimeProperty *timeProperty;
-	ForceProperty *forceProperty;
 	PositionProperty *positionProperty;
 	WeightProperty *weightProperty;
-
-	PhysicsWork work;
-
-	float gravity;
-	float drag;
-
-	friend class PhysicsWork;
 public:
 	BulletPhysicsComponent() throw (ComponentException);
 	virtual ~BulletPhysicsComponent();

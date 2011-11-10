@@ -23,6 +23,10 @@ class TimeProperty : public Property
 protected:
 	typedef std::map< EntityKey , Time > TimeType;
 	TimeType timeData;
+
+	Time last;
+	Time current;
+	Time diff;
 public:
 	TimeProperty();
 	virtual ~TimeProperty();
@@ -32,6 +36,12 @@ public:
 
 	Time& get( EntityKey key );
 	std::map< EntityKey , Time >& getTime();
+
+	void setCurrentTime( Time time );
+
+	Time getDiff();
+	Time getNow();
+	Time getPrevious();
 };
 
 } /* namespace ice */
