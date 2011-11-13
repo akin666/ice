@@ -20,7 +20,7 @@ TimeComponent::TimeComponent() throw (ComponentException)
   initialized( false )
 {
 	// Initialize properties also, if needed.
-	property = Storage::createProperty<TimeProperty>( TimeProperty::KEY );
+	property = Storage::createProperty<TimeProperty>();
 }
 
 TimeComponent::~TimeComponent()

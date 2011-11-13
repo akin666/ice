@@ -18,9 +18,9 @@ BulletPhysicsComponent::BulletPhysicsComponent() throw (ComponentException)
 {
 	addDependency( TimeComponent::KEY );
 
-	timeProperty = Storage::createProperty<TimeProperty>( TimeProperty::KEY );
-	positionProperty = Storage::createProperty<PositionProperty>( PositionProperty::KEY );
-	weightProperty = Storage::createProperty<WeightProperty>( PositionProperty::KEY );
+	timeProperty = Storage::createProperty<TimeProperty>();
+	positionProperty = Storage::createProperty<PositionProperty>();
+	weightProperty = Storage::createProperty<WeightProperty>();
 
 	// Init world.
 	collisionConfiguration = new btDefaultCollisionConfiguration();

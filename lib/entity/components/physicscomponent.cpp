@@ -21,10 +21,10 @@ PhysicsComponent::PhysicsComponent() throw (ComponentException)
 {
 	addDependency( TimeComponent::KEY );
 
-	timeProperty = Storage::createProperty<TimeProperty>( TimeProperty::KEY );
-	forceProperty = Storage::createProperty<ForceProperty>( ForceProperty::KEY );
-	positionProperty = Storage::createProperty<PositionProperty>( PositionProperty::KEY );
-	weightProperty = Storage::createProperty<WeightProperty>( WeightProperty::KEY );
+	timeProperty = Storage::createProperty<TimeProperty>();
+	forceProperty = Storage::createProperty<ForceProperty>();
+	positionProperty = Storage::createProperty<PositionProperty>();
+	weightProperty = Storage::createProperty<WeightProperty>();
 }
 
 PhysicsComponent::~PhysicsComponent()

@@ -19,7 +19,7 @@ TestBoxComponent::TestBoxComponent() throw (ComponentException)
 {
 	addDependency( PhysicsComponent::KEY );
 
-	positionProperty = Storage::createProperty<PositionProperty>( PositionProperty::KEY );
+	positionProperty = Storage::createProperty<PositionProperty>();
 }
 
 TestBoxComponent::~TestBoxComponent()
