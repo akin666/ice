@@ -10,9 +10,10 @@
 
 namespace ice
 {
+const std::string TimeProperty::KEY("time");
 
 TimeProperty::TimeProperty()
-: Property( PROPERTY_TIME_NAME )
+: Property( KEY )
 {
 }
 

@@ -11,19 +11,20 @@
 
 namespace ice
 {
+const std::string PhysicsComponent::KEY("physics");
 
 PhysicsComponent::PhysicsComponent() throw (ComponentException)
-: CCComponent( COMPONENT_PHYSICS_NAME ),
+: CCComponent( KEY ),
   work( *this ),
   gravity( 0.0981f ), // gravity affecting a gram per second.
   drag( 1.0f )
 {
-	addDependency( COMPONENT_TIME_NAME );
+	addDependency( TimeComponent::KEY );
 
-	timeProperty = Storage::createProperty<TimeProperty>( PROPERTY_TIME_NAME );
-	forceProperty = Storage::createProperty<ForceProperty>( PROPERTY_FORCE_NAME );
-	positionProperty = Storage::createProperty<PositionProperty>( PROPERTY_POSITION_NAME );
-	weightProperty = Storage::createProperty<WeightProperty>( PROPERTY_WEIGHT_NAME );
+	timeProperty = Storage::createProperty<TimeProperty>( TimeProperty::KEY );
+	forceProperty = Storage::createProperty<ForceProperty>( ForceProperty::KEY );
+	positionProperty = Storage::createProperty<PositionProperty>( PositionProperty::KEY );
+	weightProperty = Storage::createProperty<WeightProperty>( WeightProperty::KEY );
 }
 
 PhysicsComponent::~PhysicsComponent()

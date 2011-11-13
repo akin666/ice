@@ -13,13 +13,13 @@
 #include <glm/glm>
 #include <map>
 
-#define PROPERTY_POSITION_NAME "position"
-
 namespace ice
 {
 
 class PositionProperty : public Property
 {
+public:
+	const static std::string KEY;
 public:
 	class Data {
 	public:

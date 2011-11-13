@@ -9,9 +9,10 @@
 
 namespace ice
 {
+const std::string PositionProperty::KEY("position");
 
 PositionProperty::PositionProperty()
-: Property( PROPERTY_POSITION_NAME )
+: Property( KEY )
 {
 }
 

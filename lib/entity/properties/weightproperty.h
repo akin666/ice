@@ -13,13 +13,13 @@
 #include <system/common>
 #include <map>
 
-#define PROPERTY_WEIGHT_NAME "weight"
-
 namespace ice
 {
 
 class WeightProperty : public Property
 {
+public:
+	const static std::string KEY;
 protected:
 	typedef std::map< EntityKey , float > WeightType;
 	WeightType weightData;

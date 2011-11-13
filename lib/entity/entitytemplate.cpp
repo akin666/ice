@@ -18,8 +18,8 @@ unsigned int EntityTemplate::genId()
 }
 
 EntityTemplate::EntityTemplate( std::string name )
-: name( name ),
-  sm_id( genId() )
+: sm_id( genId() ),
+  name( name )
 {
 }
 

@@ -14,13 +14,13 @@
 #include <string>
 #include <map>
 
-#define PROPERTY_NAME_NAME "name"
-
 namespace ice
 {
 
 class NameProperty : public Property
 {
+public:
+	const static std::string KEY;
 protected:
 	typedef std::map< EntityKey , std::string > NameType;
 	NameType names;

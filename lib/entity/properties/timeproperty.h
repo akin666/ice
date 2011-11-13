@@ -13,13 +13,13 @@
 #include <system/common>
 #include <map>
 
-#define PROPERTY_TIME_NAME "time"
-
 namespace ice
 {
 
 class TimeProperty : public Property
 {
+public:
+	const static std::string KEY;
 protected:
 	typedef std::map< EntityKey , Time > TimeType;
 	TimeType timeData;

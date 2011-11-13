@@ -16,13 +16,13 @@
 #include <entity/properties/timeproperty.h>
 #include "timework.h"
 
-#define COMPONENT_TIME_NAME "time"
-
 namespace ice
 {
 
 class TimeComponent : public CCComponent
 {
+public:
+	const static std::string KEY;
 protected:
 	std::deque<EntityKey> entities;
 

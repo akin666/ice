@@ -9,9 +9,10 @@
 
 namespace ice
 {
+const std::string ForceProperty::KEY("force");
 
 ForceProperty::ForceProperty()
-: Property( PROPERTY_FORCE_NAME )
+: Property( KEY )
 {
 }
 

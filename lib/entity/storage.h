@@ -41,11 +41,11 @@ namespace ice
 		static EntityTemplate& getTemplate( unsigned int id );
 
 		template<class ctype>
-		static ctype& getProperty( std::string name );
+		static ctype& getProperty( std::string name = ctype::KEY );
 		template<class ctype>
-		static ctype& getComponent( std::string name );
+		static ctype& getComponent( std::string name = ctype::KEY );
 		template<class ctype>
-		static ctype& getTemplate( std::string name );
+		static ctype& getTemplate( std::string name = ctype::KEY );
 
 		template<class ctype>
 		static ctype& getProperty( unsigned int id );
@@ -67,7 +67,7 @@ namespace ice
 		static void add( EntityTemplate *entityTemplate );
 
 		template <class PropertyType>
-		static PropertyType *createProperty( std::string name );
+		static PropertyType *createProperty( std::string name = PropertyType::KEY );
 	};
 
 

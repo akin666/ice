@@ -13,13 +13,13 @@
 #include <deque>
 #include <entity/properties/positionproperty.h>
 
-#define COMPONENT_TESTBOX_NAME "testbox"
-
 namespace ice
 {
 
 class TestBoxComponent : public Component
 {
+public:
+	const static std::string KEY;
 protected:
 	std::deque<EntityKey> entities;
 

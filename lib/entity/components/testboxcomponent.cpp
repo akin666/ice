@@ -12,13 +12,14 @@
 
 namespace ice
 {
+const std::string TestBoxComponent::KEY("testbox");
 
 TestBoxComponent::TestBoxComponent() throw (ComponentException)
-: Component( COMPONENT_TESTBOX_NAME )
+: Component( KEY )
 {
-	addDependency( COMPONENT_PHYSICS_NAME );
+	addDependency( PhysicsComponent::KEY );
 
-	positionProperty = Storage::createProperty<PositionProperty>( PROPERTY_POSITION_NAME );
+	positionProperty = Storage::createProperty<PositionProperty>( PositionProperty::KEY );
 }
 
 TestBoxComponent::~TestBoxComponent()

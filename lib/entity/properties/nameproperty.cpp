@@ -9,9 +9,10 @@
 
 namespace ice
 {
+const std::string NameProperty::KEY("name");
 
 NameProperty::NameProperty()
-: Property( PROPERTY_NAME_NAME )
+: Property( KEY )
 {
 }
 

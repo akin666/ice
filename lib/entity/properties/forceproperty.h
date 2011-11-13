@@ -13,13 +13,13 @@
 #include <glm/glm>
 #include <map>
 
-#define PROPERTY_FORCE_NAME "force"
-
 namespace ice
 {
 
 class ForceProperty : public Property
 {
+public:
+	const static std::string KEY;
 public:
 	class Data {
 	public:

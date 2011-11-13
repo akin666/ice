@@ -11,8 +11,10 @@
 namespace ice
 {
 
+const std::string WeightProperty::KEY("weight");
+
 WeightProperty::WeightProperty()
-: Property( PROPERTY_WEIGHT_NAME )
+: Property( KEY )
 {
 }
 

@@ -9,6 +9,7 @@
 #define ICE_ENTITYTEMPLATE_H_
 
 #include "entity"
+#include <string>
 
 namespace ice
 {

@@ -12,13 +12,13 @@
 #include <entity/entity>
 #include <map>
 
-#define PROPERTY_BOUNDING_SPHERE_NAME "boundingsphere"
-
 namespace ice
 {
 
 class BoundingSphereProperty : public Property
 {
+public:
+	const static std::string KEY;
 protected:
 	typedef std::map< EntityKey , float > SphereType;
 	SphereType spheres;

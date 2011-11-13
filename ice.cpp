@@ -147,8 +147,8 @@ int iceMain( int argc , char *argv[] )
 
 	Random& random = Random::get();
 
-	PositionProperty *positionProperty = Storage::createProperty<PositionProperty>( PROPERTY_POSITION_NAME );
-	WeightProperty *weightProperty = Storage::createProperty<WeightProperty>( PROPERTY_WEIGHT_NAME );
+	PositionProperty *positionProperty = Storage::createProperty<PositionProperty>( PositionProperty::KEY );
+	WeightProperty *weightProperty = Storage::createProperty<WeightProperty>( WeightProperty::KEY );
 
 	for( int i = entityCount - 1 ; i >= 0 ; --i )
 	{

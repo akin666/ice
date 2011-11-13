@@ -17,13 +17,13 @@
 #include <entity/properties/positionproperty.h>
 #include <entity/properties/weightproperty.h>
 
-#define COMPONENT_BULLET_PHYSICS_NAME "bulletphysics"
-
 namespace ice
 {
 
 class BulletPhysicsComponent : public Component
 {
+public:
+	const static std::string KEY;
 protected:
 
 	class BPData {

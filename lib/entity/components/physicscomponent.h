@@ -17,13 +17,13 @@
 #include <entity/properties/positionproperty.h>
 #include <entity/properties/weightproperty.h>
 
-#define COMPONENT_PHYSICS_NAME "physics"
-
 namespace ice
 {
 
 class PhysicsComponent : public CCComponent
 {
+public:
+	const static std::string KEY;
 protected:
 	std::deque<EntityKey> entities;
 

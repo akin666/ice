@@ -9,9 +9,10 @@
 
 namespace ice
 {
+const std::string BoundingSphereProperty::KEY("boundingsphere");
 
 BoundingSphereProperty::BoundingSphereProperty()
-: Property( PROPERTY_BOUNDING_SPHERE_NAME )
+: Property( KEY )
 {
 }
 

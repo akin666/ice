@@ -12,14 +12,15 @@
 
 namespace ice
 {
+const std::string TimeComponent::KEY("time");
 
 TimeComponent::TimeComponent() throw (ComponentException)
-: CCComponent( COMPONENT_TIME_NAME ),
+: CCComponent( KEY ),
   work( *this ),
   initialized( false )
 {
 	// Initialize properties also, if needed.
-	property = Storage::createProperty<TimeProperty>( PROPERTY_TIME_NAME );
+	property = Storage::createProperty<TimeProperty>( TimeProperty::KEY );
 }
 
 TimeComponent::~TimeComponent()

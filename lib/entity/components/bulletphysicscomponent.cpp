@@ -11,15 +11,16 @@
 
 namespace ice
 {
+const std::string BulletPhysicsComponent::KEY("bulletphysics");
 
 BulletPhysicsComponent::BulletPhysicsComponent() throw (ComponentException)
-: Component( COMPONENT_BULLET_PHYSICS_NAME )
+: Component( KEY )
 {
-	addDependency( COMPONENT_TIME_NAME );
+	addDependency( TimeComponent::KEY );
 
-	timeProperty = Storage::createProperty<TimeProperty>( PROPERTY_TIME_NAME );
-	positionProperty = Storage::createProperty<PositionProperty>( PROPERTY_POSITION_NAME );
-	weightProperty = Storage::createProperty<WeightProperty>( PROPERTY_WEIGHT_NAME );
+	timeProperty = Storage::createProperty<TimeProperty>( TimeProperty::KEY );
+	positionProperty = Storage::createProperty<PositionProperty>( PositionProperty::KEY );
+	weightProperty = Storage::createProperty<WeightProperty>( PositionProperty::KEY );
 
 	// Init world.
 	collisionConfiguration = new btDefaultCollisionConfiguration();
