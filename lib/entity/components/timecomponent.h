@@ -34,6 +34,8 @@ protected:
 	Time now;
 	Time diff;
 
+	Time gathered;
+
 	TimeProperty *property;
 
 	// EVIL! but, imagining that the work is just a package,

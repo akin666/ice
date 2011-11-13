@@ -25,6 +25,7 @@
 #include <entity/entity>
 
 #include <entity/components/physicscomponent.h>
+#include <entity/components/bulletphysicscomponent.h>
 #include <entity/components/timecomponent.h>
 #include <entity/components/testboxcomponent.h>
 #include <entity/storage>
@@ -104,7 +105,7 @@ int iceMain( int argc , char *argv[] )
 	}
 
 	// Common begin.
-	int entityCount = 10000;
+	int entityCount = 1000;
 	Entity entity[entityCount];
 
 	GLFWDisplay display;
@@ -142,6 +143,7 @@ int iceMain( int argc , char *argv[] )
 	TimeComponent times;
 	PhysicsComponent physics;
 	TestBoxComponent testBox;
+	BulletPhysicsComponent bphysics;
 
 	Pipeline& pipeline = Application::get()->getPipeline();
 
@@ -171,11 +173,19 @@ int iceMain( int argc , char *argv[] )
 		positionData.position.z = -random.getFloat() * 50.0f;
 
 		weight = 50.0f + random.getFloat() * 950.0f; // fatass weights a [50g,1kg]
+
+		try {
+			bphysics.attach( entity[i] );
+		}
+		catch( ComponentException& e ) {
+		}
+		catch( ... ) {
+		}
 	}
 
 	try {
 		pipeline.attach( &times );
-		pipeline.attach( &physics );
+		pipeline.attach( &bphysics );
 		pipeline.attach( &testBox );
 	}
 	catch( PipelineException& e ) {

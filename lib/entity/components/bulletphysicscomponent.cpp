@@ -39,7 +39,7 @@ BulletPhysicsComponent::BulletPhysicsComponent() throw (ComponentException)
 	dynamicsWorld->setGravity(btVector3(0,-10,0));
 
 	///create a few basic rigid bodies
-	ground.shape = new btBoxShape(btVector3(btScalar(50.),btScalar(50.),btScalar(50.)));
+	ground.shape = new btBoxShape(btVector3(btScalar(150.),btScalar(1.),btScalar(150.)));
 
 	//keep track of the shapes, we release memory at exit.
 	//make sure to re-use collision shapes among rigid bodies whenever possible!
@@ -47,7 +47,10 @@ BulletPhysicsComponent::BulletPhysicsComponent() throw (ComponentException)
 
 	btTransform groundTransform;
 	groundTransform.setIdentity();
-	groundTransform.setOrigin(btVector3(0,-56,0));
+	groundTransform.setOrigin(btVector3(0,0,0));
+	btQuaternion quat;
+	quat.setEuler(0, 0, 0);
+	groundTransform.setRotation( quat );
 
 	//using motionstate is recommended, it provides interpolation capabilities, and only synchronizes 'active' objects
 	ground.motionState = new btDefaultMotionState(groundTransform);
@@ -82,7 +85,7 @@ void BulletPhysicsComponent::attach( Entity& entity ) throw (ComponentException)
 		float& weight = weightProperty->get( entity.id );
 		PositionProperty::Data& position = positionProperty->get(  entity.id  );
 
-		tmp.shape = new btSphereShape(btScalar( weight ));
+		tmp.shape = new btSphereShape(btScalar( weight * 0.002f ));
 
 		collisionShapes.push_back( tmp.shape );
 
@@ -130,9 +133,15 @@ void BulletPhysicsComponent::start() throw (ComponentException)
 	// Do physics tick.
 	Time step = timeProperty->getDiff();
 
+	if( step == 0 )
+	{
+		finish();
+		return;
+	}
+
 	float seconds = step * 0.001f;
 
-	dynamicsWorld->stepSimulation( seconds , 10 );
+	dynamicsWorld->stepSimulation( seconds , 40 );
 
 	// Update dots.
 	for( std::map< EntityKey , BPData >::iterator iter = pdata.begin() ; iter != pdata.end() ; ++iter )
@@ -150,6 +159,8 @@ void BulletPhysicsComponent::start() throw (ComponentException)
 		position.position.y = float(trans.getOrigin().getY());
 		position.position.z = float(trans.getOrigin().getZ());
 	}
+
+	finish();
 }
 
 } /* namespace ice */

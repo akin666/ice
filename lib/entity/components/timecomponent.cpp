@@ -53,12 +53,20 @@ void TimeComponent::start() throw (ComponentException)
 		now = clock.getCurrentTime();
 		property->setCurrentTime( now );
 		initialized = true;
+		gathered = 0;
 	}
 
+	diff = 0;
 
 	last = now;
 	now = clock.getCurrentTime();
-	diff = now - last;
+	gathered += now - last;
+
+	if( gathered > 20 )
+	{
+		diff = gathered;
+		gathered = 0;
+	}
 
 	property->setCurrentTime( now );
 
