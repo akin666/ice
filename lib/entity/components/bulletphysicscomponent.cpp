@@ -39,7 +39,7 @@ BulletPhysicsComponent::BulletPhysicsComponent() throw (ComponentException)
 	dynamicsWorld->setGravity(btVector3(0,-10,0));
 
 	///create a few basic rigid bodies
-	ground.shape = new btBoxShape(btVector3(btScalar(150.),btScalar(1.),btScalar(150.)));
+	ground.shape = new btStaticPlaneShape(btVector3(0,1,0),1);
 
 	//keep track of the shapes, we release memory at exit.
 	//make sure to re-use collision shapes among rigid bodies whenever possible!
@@ -48,7 +48,7 @@ BulletPhysicsComponent::BulletPhysicsComponent() throw (ComponentException)
 	btTransform groundTransform;
 	groundTransform.setIdentity();
 	groundTransform.setOrigin(btVector3(0,0,0));
-	btQuaternion quat;
+	btQuaternion quat(0,0,0,1);
 	quat.setEuler(0, 0, 0);
 	groundTransform.setRotation( quat );
 

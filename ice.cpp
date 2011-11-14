@@ -156,13 +156,15 @@ int iceMain( int argc , char *argv[] )
 	{
 		try {
 			times.attach( entity[i] );
-			physics.attach( entity[i] );
 			testBox.attach( entity[i] );
 		}
 		catch( ComponentException& e ) {
 		}
 		catch( ... ) {
 		}
+
+		positionProperty->attach( entity[i] );
+		weightProperty->attach( entity[i] );
 
 		PositionProperty::Data& positionData = positionProperty->get( entity[i].id );
 		float& weight = weightProperty->get( entity[i].id );
@@ -175,7 +177,14 @@ int iceMain( int argc , char *argv[] )
 		weight = 50.0f + random.getFloat() * 950.0f; // fatass weights a [50g,1kg]
 
 		try {
-			bphysics.attach( entity[i] );
+			if( i < (entityCount/2) ) {
+				bphysics.attach( entity[i] );
+				positionData.color = true;
+			}
+			else {
+				physics.attach( entity[i] );
+				positionData.color = false;
+			}
 		}
 		catch( ComponentException& e ) {
 		}
@@ -186,6 +195,7 @@ int iceMain( int argc , char *argv[] )
 	try {
 		pipeline.attach( &times );
 		pipeline.attach( &bphysics );
+		pipeline.attach( &physics );
 		pipeline.attach( &testBox );
 	}
 	catch( PipelineException& e ) {

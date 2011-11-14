@@ -25,6 +25,7 @@ public:
 	public:
 		glm::vec3 position;
 		glm::quat orientation;
+		bool color;
 	};
 protected:
 	typedef std::map< EntityKey , Data > PositionType;

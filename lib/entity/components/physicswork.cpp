@@ -48,22 +48,30 @@ void PhysicsWork::run()
 
 	std::deque<EntityKey>& entities = tcparent->entities;
 
+	Time step = timeProperty->getDiff();
+
+	if( step == 0 )
+	{
+		return;
+	}
+
+	float seconds = step * 0.001f;
+
 	float gravity = tcparent->gravity;
 	float drag = tcparent->drag;
 
 	// Do physics!
-	float seconds;
 	float gravityEffect;
 	for( int i = entities.size() - 1 ; i >= 0 ; --i )
 	{
 		// Get data references..
 		EntityKey entity = entities.at( i );
-		Time& time = timeProperty->get( entity );
+		//Time& time = timeProperty->get( entity );
 		float& weight = weightProperty->get( entity );
 		ForceProperty::Data& forceData = forceProperty->get( entity );
 		PositionProperty::Data& positionData = positionProperty->get( entity );
 
-		seconds = time * 0.001f; // convert ms to s.
+		//seconds = time * 0.001f; // convert ms to s.
 
 		// Now using time, weight, forces, and position.. update position and other datas.
 		forceData.position.y -= gravity * weight * seconds;
@@ -77,10 +85,10 @@ void PhysicsWork::run()
 		// Add forces to positions.
 		positionData.position += forceData.position * seconds;
 
-//		std::cout << "------------------" << std::endl;
-//		std::cout << "gravity:" << gravity << " time:" << time << " seconds:" << seconds << " weight:" << weight << std::endl;
-//		std::cout << "FORCES to X:" << forceData.position.x << " Y:" << forceData.position.y << " Z:" << forceData.position.z << std::endl;
-//		std::cout << "ID:" << entity << "\tUpdated to X:" << positionData.position.x << " Y:" << positionData.position.y << " Z:" << positionData.position.z << std::endl;
+			std::cout << "------------------" << std::endl;
+			std::cout << "gravity:" << gravity << " seconds:" << seconds << " weight:" << weight << std::endl;
+			std::cout << "FORCES to X:" << forceData.position.x << " Y:" << forceData.position.y << " Z:" << forceData.position.z << std::endl;
+			std::cout << "ID:" << entity << "\tUpdated to X:" << positionData.position.x << " Y:" << positionData.position.y << " Z:" << positionData.position.z << std::endl;
 	}
 }
 
