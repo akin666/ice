@@ -16,7 +16,7 @@ namespace ice
 class TimeWork : public ComponentWork
 {
 public:
-	TimeWork( CCComponent& parent );
+	TimeWork( Component& parent );
 	virtual ~TimeWork();
 
 	virtual bool begin();

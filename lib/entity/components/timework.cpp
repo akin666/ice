@@ -11,7 +11,7 @@
 namespace ice
 {
 
-TimeWork::TimeWork( CCComponent& parent )
+TimeWork::TimeWork( Component& parent )
 : ComponentWork( parent )
 {
 }

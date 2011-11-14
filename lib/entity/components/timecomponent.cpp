@@ -15,7 +15,7 @@ namespace ice
 const std::string TimeComponent::KEY("time");
 
 TimeComponent::TimeComponent() throw (ComponentException)
-: CCComponent( KEY ),
+: Component( KEY , true ),
   work( *this ),
   initialized( false )
 {

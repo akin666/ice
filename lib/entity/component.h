@@ -18,6 +18,7 @@
 #include <string>
 #include <set>
 #include "componentexception.h"
+#include "componentwork"
 
 namespace ice
 {
@@ -26,6 +27,8 @@ namespace ice
 
 	class Component
 	{
+	protected:
+		unsigned int concurrent_reference_counting;
 	protected:
 		static unsigned int sm_id;
 		static unsigned int getNewId();
@@ -73,10 +76,15 @@ namespace ice
 		// on multithreaded situation, it should start work packages, but not block.
 		// Once all computing is done, finish() has to be called.
 		virtual void start() throw (ComponentException);
-
+	public:
 		// finish should be called, once the thread/all the stuff the component is doing
 		// is done. Not before! Applies to singlethreaded mode too!.
 		void finish();
+
+		void execute();
+
+		void schedule( ComponentWork& work ) throw (ComponentException);
+		void finished( ComponentWork& work );
 	};
 
 } /* namespace ice */

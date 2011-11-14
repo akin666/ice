@@ -12,7 +12,7 @@
 namespace ice
 {
 
-PhysicsWork::PhysicsWork( CCComponent& parent )
+PhysicsWork::PhysicsWork( Component& parent )
 : ComponentWork( parent )
 {
 }

@@ -10,6 +10,7 @@
 #include <vector>
 #include <iterator>
 #include "componentnode"
+#include <system/application>
 
 namespace ice
 {
@@ -102,7 +103,37 @@ bool Component::isConcurrent()
 
 void Component::start() throw (ComponentException)
 {
-	finish();
+}
+
+void Component::schedule( ComponentWork& work ) throw (ComponentException)
+{
+	++concurrent_reference_counting;
+	Application::get()->getThreadPool().schedule( &work );
+}
+
+void Component::execute()
+{
+	// TODO! Major, Probably not Thread safe!
+	// TODO!!!!!
+	concurrent_reference_counting = 1;
+	start();
+
+	// Only one running!
+	if( concurrent_reference_counting == 1 )
+	{
+		finish();
+	}
+	--concurrent_reference_counting;
+}
+
+void Component::finished( ComponentWork& work )
+{
+	--concurrent_reference_counting;
+
+	if( concurrent_reference_counting == 0 )
+	{
+		finish();
+	}
 }
 
 void Component::finish()

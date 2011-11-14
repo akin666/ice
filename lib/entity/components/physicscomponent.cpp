@@ -14,7 +14,7 @@ namespace ice
 const std::string PhysicsComponent::KEY("physics");
 
 PhysicsComponent::PhysicsComponent() throw (ComponentException)
-: CCComponent( KEY ),
+: Component( KEY , true ),
   work( *this ),
   gravity( 0.0981f ), // gravity affecting a gram per second.
   drag( 1.0f )

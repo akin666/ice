@@ -6,12 +6,12 @@
  */
 
 #include "componentwork"
-#include "cccomponent"
+#include "component"
 
 namespace ice
 {
 
-ComponentWork::ComponentWork( CCComponent& parent )
+ComponentWork::ComponentWork( Component& parent )
 : parent(parent)
 {
 }

@@ -16,7 +16,7 @@ namespace ice
 class PhysicsWork : public ComponentWork
 {
 public:
-	PhysicsWork( CCComponent& parent );
+	PhysicsWork( Component& parent );
 	virtual ~PhysicsWork();
 
 	virtual bool begin();

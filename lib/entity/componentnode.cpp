@@ -40,7 +40,7 @@ void ComponentNode::componentStart( TQue<ComponentNode*>& target , unsigned int 
 
 	endTime = end;
 	finishQueu = &target;
-	current.start();
+	current.execute();
 }
 
 bool ComponentNode::isRunning()

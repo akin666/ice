@@ -8,7 +8,7 @@
 #ifndef PHYSICSCOMPONENT_H_
 #define PHYSICSCOMPONENT_H_
 
-#include <entity/cccomponent>
+#include <entity/component>
 #include <entity/entity>
 #include <deque>
 #include "physicswork.h"
@@ -20,7 +20,7 @@
 namespace ice
 {
 
-class PhysicsComponent : public CCComponent
+class PhysicsComponent : public Component
 {
 public:
 	const static std::string KEY;

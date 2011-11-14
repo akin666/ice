@@ -8,7 +8,7 @@
 #ifndef TIMECOMPONENT_H_
 #define TIMECOMPONENT_H_
 
-#include <entity/cccomponent>
+#include <entity/component>
 #include <entity/entity>
 #include <system/common>
 #include <system/clock>
@@ -19,7 +19,7 @@
 namespace ice
 {
 
-class TimeComponent : public CCComponent
+class TimeComponent : public Component
 {
 public:
 	const static std::string KEY;

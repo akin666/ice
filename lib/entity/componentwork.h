@@ -12,14 +12,14 @@
 
 namespace ice
 {
-	class CCComponent;
+	class Component;
 
 	class ComponentWork : public Work
 	{
 	protected:
-		CCComponent& parent;
+		Component& parent;
 	public:
-		ComponentWork( CCComponent& parent );
+		ComponentWork( Component& parent );
 		virtual ~ComponentWork();
 
 		virtual bool begin() = 0;
