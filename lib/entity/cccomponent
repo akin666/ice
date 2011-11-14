@@ -1,4 +1,0 @@
-
-#ifndef ICE_CONCURRENTCOMPONENT_H_
-#include "cccomponent.h"
-#endif
