@@ -16,8 +16,7 @@ const std::string TimeComponent::KEY("time");
 
 TimeComponent::TimeComponent() throw (ComponentException)
 : Component( KEY , true ),
-  work( *this ),
-  initialized( false )
+  work( *this )
 {
 	// Initialize properties also, if needed.
 	property = Storage::createProperty<TimeProperty>();
@@ -48,27 +47,7 @@ void TimeComponent::detach( Entity& entity ) throw (ComponentException)
 
 void TimeComponent::start() throw (ComponentException)
 {
-	if( !initialized )
-	{
-		now = clock.getCurrentTime();
-		property->setCurrentTime( now );
-		initialized = true;
-		gathered = 0;
-	}
-
-	diff = 0;
-
-	last = now;
-	now = clock.getCurrentTime();
-	gathered += now - last;
-
-	if( gathered > 20 )
-	{
-		diff = gathered;
-		gathered = 0;
-	}
-
-	property->setCurrentTime( now );
+	property->setCurrentTime( clock.getCurrentTime() );
 
 	schedule( work );
 }

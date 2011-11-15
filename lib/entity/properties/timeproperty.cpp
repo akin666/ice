@@ -13,7 +13,8 @@ namespace ice
 const std::string TimeProperty::KEY("time");
 
 TimeProperty::TimeProperty()
-: Property( KEY )
+: Property( KEY ),
+  last( 0 )
 {
 }
 
@@ -49,6 +50,15 @@ std::map< unsigned int , Time >& TimeProperty::getTime()
 
 void TimeProperty::setCurrentTime( Time time )
 {
+	// Time 0 is impossibility,
+	// you are initialized JUST now,
+	// or you are on drugs, BOTH cases are pretty
+	// awesome, so we create this AWESOME case.
+	if( last == 0 )
+	{
+		current = time;
+	}
+
 	last = current;
 	current = time;
 

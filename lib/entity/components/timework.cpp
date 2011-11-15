@@ -37,7 +37,7 @@ void TimeWork::run()
 
 	TimeProperty *property = tcparent->property;
 	std::deque<EntityKey>& entities = tcparent->entities;
-	Time diff = tcparent->diff;
+	Time diff = property->getDiff();
 
 	// How much time has happened to each component.
 	// Set the time to each component!
