@@ -15,7 +15,7 @@
 namespace ice
 {
 
-unsigned int Component::sm_id = 1;
+unsigned int Component::sm_id = 0xFF;
 
 unsigned int Component::getNewId()
 {

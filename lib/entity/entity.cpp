@@ -10,7 +10,8 @@
 namespace ice
 {
 
-unsigned int Entity::s_id = 0;
+EntityKey Entity::s_id = 0xFF;
+const EntityKey Entity::NIL = 0x0;
 
 unsigned int Entity::genId()
 {

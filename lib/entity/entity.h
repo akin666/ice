@@ -14,9 +14,11 @@ namespace ice
 
 	class Entity
 	{
+	public:
+		static const EntityKey NIL;
 	protected:
-		static unsigned int s_id;
-		static unsigned int genId();
+		static EntityKey s_id;
+		static EntityKey genId();
 	public:
 		Entity();
 		Entity( const Entity& other );

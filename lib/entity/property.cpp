@@ -10,7 +10,7 @@
 namespace ice
 {
 
-unsigned int Property::sm_id = 1;
+unsigned int Property::sm_id = 0xFF;
 
 unsigned int Property::getNewId()
 {
