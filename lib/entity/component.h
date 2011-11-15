@@ -35,9 +35,10 @@ namespace ice
 
 		unsigned int id;
 		std::string name;
+		bool concurrent;
+
 		unsigned int priority;
 
-		bool concurrent;
 
 		std::set<std::string> dependencies;
 		ComponentNode *componentNode;
