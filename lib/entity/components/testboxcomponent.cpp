@@ -7,7 +7,7 @@
 
 #include "testboxcomponent.h"
 #include "physicscomponent.h"
-#include "bulletphysicscomponent.h".h"
+#include "bulletphysicscomponent.h"
 #include <entity/storage>
 #include <system/opengl>
 
@@ -67,8 +67,6 @@ void TestBoxComponent::start() throw (ComponentException)
 		glVertex3f( position.position.x , position.position.y , position.position.z );
 		glEnd();
 	}
-
-	finish();
 }
 
 } /* namespace ice */

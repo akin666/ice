@@ -79,16 +79,16 @@ void PhysicsWork::run()
 		// flip
 		if( positionData.position.y < 0.0f && forceData.position.y < 0 )
 		{
-			forceData.position.y = -forceData.position.y;
+			forceData.position.y = (-forceData.position.y * 0.5f);
 		}
 
 		// Add forces to positions.
 		positionData.position += forceData.position * seconds;
 
-			std::cout << "------------------" << std::endl;
-			std::cout << "gravity:" << gravity << " seconds:" << seconds << " weight:" << weight << std::endl;
-			std::cout << "FORCES to X:" << forceData.position.x << " Y:" << forceData.position.y << " Z:" << forceData.position.z << std::endl;
-			std::cout << "ID:" << entity << "\tUpdated to X:" << positionData.position.x << " Y:" << positionData.position.y << " Z:" << positionData.position.z << std::endl;
+//			std::cout << "------------------" << std::endl;
+//			std::cout << "gravity:" << gravity << " seconds:" << seconds << " weight:" << weight << std::endl;
+//			std::cout << "FORCES to X:" << forceData.position.x << " Y:" << forceData.position.y << " Z:" << forceData.position.z << std::endl;
+//			std::cout << "ID:" << entity << "\tUpdated to X:" << positionData.position.x << " Y:" << positionData.position.y << " Z:" << positionData.position.z << std::endl;
 	}
 }
 

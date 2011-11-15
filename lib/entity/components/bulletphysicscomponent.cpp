@@ -159,8 +159,6 @@ void BulletPhysicsComponent::start() throw (ComponentException)
 		position.position.y = float(trans.getOrigin().getY());
 		position.position.z = float(trans.getOrigin().getZ());
 	}
-
-	finish();
 }
 
 } /* namespace ice */
