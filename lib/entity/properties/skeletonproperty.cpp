@@ -9,7 +9,7 @@
 
 namespace ice
 {
-const std::string MaterialProperty::KEY("skeleton");
+const std::string SkeletonProperty::KEY("skeleton");
 
 SkeletonProperty::SkeletonProperty()
 : Property( KEY )
