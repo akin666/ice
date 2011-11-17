@@ -7,6 +7,7 @@
 
 #include "mesh.h"
 #include <iostream>
+#include <cstring>
 
 ice::MeshData::MeshData()
 : vertexCoordinates( NULL ),
@@ -74,6 +75,24 @@ void ice::MeshData::copy(const MeshData & other)
 
 
 
+
+
+//////////////////////
+// MeshDataBuffer
+/////////////////////
+
+ice::MeshDataBuffer::MeshDataBuffer()
+: count( 0 )
+{
+}
+
+ice::MeshDataBuffer::~MeshDataBuffer()
+{
+}
+
+
+
+
 //////////////////////
 // MeshIndex
 /////////////////////
@@ -122,6 +141,24 @@ void ice::MeshIndex::copy(const MeshIndex & other)
 
 
 
+
+//////////////////////
+// MeshIndexBuffer
+/////////////////////
+
+ice::MeshIndexBuffer::MeshIndexBuffer()
+: count( 0 ),
+  type( Graphics::triangles )
+{
+}
+
+ice::MeshIndexBuffer::~MeshIndexBuffer()
+{
+}
+
+
+
+
 //////////////////////
 // Mesh
 /////////////////////
@@ -153,60 +190,4 @@ void ice::Mesh::copy(const Mesh & other)
 }
 
 
-
-//////////////////////
-// MeshGroup
-/////////////////////
-
-ice::MeshGroup::MeshGroup()
-{
-}
-
-ice::MeshGroup::MeshGroup(const MeshGroup & other)
-: MeshData( other )
-{
-}
-
-ice::MeshGroup::~MeshGroup()
-{
-}
-
-void ice::MeshGroup::clear()
-{
-	MeshData::clear();
-}
-
-void ice::MeshGroup::copy(const MeshGroup & other)
-{
-	MeshData::copy( other);
-}
-
-
-
-//////////////////////
-// MeshPart
-/////////////////////
-
-ice::MeshPart::MeshPart()
-{
-}
-
-ice::MeshPart::MeshPart(const MeshPart & other)
-: MeshIndex( other )
-{
-}
-
-ice::MeshPart::~MeshPart()
-{
-}
-
-void ice::MeshPart::clear()
-{
-	MeshIndex::clear();
-}
-
-void ice::MeshPart::copy(const MeshPart & other)
-{
-	MeshIndex::copy( other );
-}
 

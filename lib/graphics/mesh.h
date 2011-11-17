@@ -10,6 +10,7 @@
 
 #include <glm/glm>
 #include "graphics.h"
+#include "bufferobject.h"
 
 namespace ice
 {
@@ -36,6 +37,20 @@ namespace ice
 		void copy( const MeshData& other );
 	};
 
+	class MeshDataBuffer
+	{
+	protected:
+		BufferObject vertexCoordinates;
+		BufferObject textureCoordinates;
+		BufferObject normalCoordinates;
+		BufferObject colorCoordinates;
+
+		int count;
+	public:
+		MeshDataBuffer();
+		virtual ~MeshDataBuffer();
+	};
+
 	// Base type
 	class MeshIndex
 	{
@@ -53,6 +68,18 @@ namespace ice
 		void copy( const MeshIndex& other );
 	};
 
+	class MeshIndexBuffer
+	{
+	protected:
+		BufferObject indexArray;
+
+		int count;
+		Graphics::Primitives type;
+	public:
+		MeshIndexBuffer();
+		virtual ~MeshIndexBuffer();
+	};
+
 	// Simple mesh type, that contains all the stuff to
 	// create something simple from one type of data.
 	class Mesh : public MeshData , public MeshIndex
@@ -63,30 +90,6 @@ namespace ice
 		virtual ~Mesh();
 		virtual void clear();
 		void copy( const Mesh& other );
-	};
-
-	// Mesh group.
-	// Single package of MeshData
-	// combined with MeshPart, creates more complex Mesh
-	// than the Mesh class.
-	class MeshGroup : public MeshData
-	{
-	public:
-		MeshGroup();
-		MeshGroup( const MeshGroup& other );
-		virtual ~MeshGroup();
-		virtual void clear();
-		void copy( const MeshGroup& other );
-	};
-
-	class MeshPart : public MeshIndex
-	{
-	public:
-		MeshPart();
-		MeshPart( const MeshPart& other );
-		virtual ~MeshPart();
-		virtual void clear();
-		void copy( const MeshPart& other );
 	};
 } /* namespace ice */
 #endif /* MESH_H_ */

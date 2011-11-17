@@ -33,6 +33,11 @@ namespace ice
 		}
 	}
 
+	bool BufferObject::hasInitialized()
+	{
+		return id != GL_NULL_BUFFER;
+	}
+
 	void BufferObject::reserve( const unsigned int bytesize , Graphics::Residence residence , Graphics::Updates updates )
 	{
 		set( bytesize , 0 , residence , updates );

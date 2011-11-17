@@ -35,6 +35,7 @@ namespace ice
 		BufferObject();
 		virtual ~BufferObject();
 
+		bool hasInitialized();
 		void initialize();
 		void reserve( const unsigned int bytesize , Graphics::Residence residence = Graphics::gpu , Graphics::Updates updates = Graphics::multipleTimes );
 		void set( const unsigned int bytesize , const void *data , Graphics::Residence residence = Graphics::gpu , Graphics::Updates updates = Graphics::multipleTimes );
