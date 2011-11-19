@@ -9,7 +9,7 @@
 #define UIAREA_H_
 
 #include "uicontainer.h"
-#include <graphics/simplemesh.h>
+#include <graphics/mesh/simplemesh.h>
 
 namespace ice
 {

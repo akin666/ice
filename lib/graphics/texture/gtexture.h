@@ -15,7 +15,7 @@
 #include "texturefilter.h"
 #include "texturewrap.h"
 #include <iostream>
-#include "bufferobject.h"
+#include "../bufferobject.h"
 
 namespace ice
 {

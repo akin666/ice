@@ -10,8 +10,8 @@
 
 #include <iostream>
 #include <glm/glm>
-#include "texture.h"
-#include "graphicsexception"
+#include "../texture/texture.h"
+#include "../graphicsexception"
 
 namespace ice
 {

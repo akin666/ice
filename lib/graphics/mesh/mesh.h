@@ -9,8 +9,8 @@
 #define MESH_H_
 
 #include <glm/glm>
-#include "graphics.h"
-#include "bufferobject.h"
+#include "../graphics.h"
+#include "../bufferobject.h"
 
 namespace ice
 {
@@ -78,18 +78,6 @@ namespace ice
 	public:
 		MeshIndexBuffer();
 		virtual ~MeshIndexBuffer();
-	};
-
-	// Simple mesh type, that contains all the stuff to
-	// create something simple from one type of data.
-	class Mesh : public MeshData , public MeshIndex
-	{
-	public:
-		Mesh();
-		Mesh( const Mesh& other );
-		virtual ~Mesh();
-		virtual void clear();
-		void copy( const Mesh& other );
 	};
 } /* namespace ice */
 #endif /* MESH_H_ */

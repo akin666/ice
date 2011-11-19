@@ -9,11 +9,11 @@
 #define SIMPLEMESH_H_
 
 #include <glm/glm>
-#include "texture.h"
-#include "graphics.h"
-#include "shaderprogram.h"
-#include "uniform.h"
-#include "attribute.h"
+#include "../texture/texture.h"
+#include "../graphics.h"
+#include "../shader/shaderprogram.h"
+#include "../shader/uniform.h"
+#include "../shader/attribute.h"
 
 #include <vector>
 

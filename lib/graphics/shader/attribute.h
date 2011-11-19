@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <system/opengl>
-#include "graphicsexception"
+#include "../graphicsexception"
 
 namespace ice
 {

@@ -9,7 +9,7 @@
 #define UIBUTTON_H_
 
 #include "uicomponent.h"
-#include "../graphics/simplemesh.h"
+#include <graphics/mesh/simplemesh.h>
 
 namespace ice
 {

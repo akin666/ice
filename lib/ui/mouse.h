@@ -9,7 +9,7 @@
 #define MOUSE_H_
 
 #include <glm/glm>
-#include <graphics/simplemesh.h>
+#include <graphics/mesh/simplemesh.h>
 
 namespace ice
 {

@@ -8,7 +8,7 @@
 #ifndef FRAMEBUFFER_H_
 #define FRAMEBUFFER_H_
 
-#include "gtexture.h"
+#include "texture/gtexture.h"
 
 namespace ice
 {

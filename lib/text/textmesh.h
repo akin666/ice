@@ -8,9 +8,9 @@
 #ifndef TEXTMESH_H_
 #define TEXTMESH_H_
 
-#include <graphics/shaderprogram.h>
-#include <graphics/uniform.h>
-#include <graphics/attribute.h>
+#include <graphics/shader/shaderprogram.h>
+#include <graphics/shader/uniform.h>
+#include <graphics/shader/attribute.h>
 #include <graphics/bufferobject.h>
 #include <font/font.h>
 #include <vector>

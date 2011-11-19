@@ -9,8 +9,8 @@
 #define UIIMAGE_H_
 
 #include "uicomponent.h"
-#include <graphics/gtexture.h>
-#include <graphics/simplemesh.h>
+#include <graphics/texture/gtexture.h>
+#include <graphics/mesh/simplemesh.h>
 
 namespace ice
 {

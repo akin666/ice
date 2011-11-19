@@ -9,7 +9,7 @@
 #define SHADER_H_
 
 #include <iostream>
-#include "graphicsexception"
+#include "../graphicsexception"
 
 namespace ice
 {

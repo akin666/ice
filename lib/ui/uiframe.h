@@ -12,7 +12,7 @@
 #include "mouse.h"
 #include "uicontainer.h"
 #include "uiparent.h"
-#include <graphics/shaderprogram.h>
+#include <graphics/shader/shaderprogram.h>
 
 namespace ice
 {

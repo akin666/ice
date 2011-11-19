@@ -156,38 +156,3 @@ ice::MeshIndexBuffer::~MeshIndexBuffer()
 {
 }
 
-
-
-
-//////////////////////
-// Mesh
-/////////////////////
-
-ice::Mesh::Mesh()
-{
-}
-
-ice::Mesh::Mesh(const Mesh & other)
-: MeshData( other ), MeshIndex( other )
-{
-}
-
-ice::Mesh::~Mesh()
-{
-	// parents do clean by themselfs.
-}
-
-void ice::Mesh::clear()
-{
-	MeshData::clear();
-	MeshIndex::clear();
-}
-
-void ice::Mesh::copy(const Mesh & other)
-{
-	MeshData::copy( other);
-	MeshIndex::copy( other );
-}
-
-
-

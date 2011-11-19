@@ -14,7 +14,7 @@
 #include "shader.h"
 #include "uniform.h"
 #include "attribute.h"
-#include "graphicsexception"
+#include "../graphicsexception"
 
 namespace ice
 {

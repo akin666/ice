@@ -8,8 +8,8 @@
 #ifndef LOADER_H_
 #define LOADER_H_
 
-#include "gtexture.h"
-#include "shader.h"
+#include "texture/gtexture.h"
+#include "shader/shader.h"
 #include <font/font.h>
 #include <dio/dio>
 

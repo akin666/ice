@@ -8,8 +8,8 @@
 #ifndef FONT_H_
 #define FONT_H_
 
-#include <graphics/gtextureatlas.h>
-#include <graphics/texture.h>
+#include <graphics/texture/gtextureatlas.h>
+#include <graphics/texture/texture.h>
 #include "glyph.h"
 #include <map>
 #include <system/common>

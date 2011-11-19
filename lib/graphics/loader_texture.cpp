@@ -12,7 +12,7 @@
 #include <libwrapper.h> // stb_image functions
 #include <dio/filedio.h> // binary file access
 #include <system/global>
-#include "texturegroup.h"
+#include "texture/texturegroup.h"
 #include <glm/glm>
 
 namespace ice

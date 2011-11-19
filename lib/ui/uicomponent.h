@@ -11,7 +11,7 @@
 #include <glm/glm>
 #include "uieventhandler.h"
 #include "uiparent.h"
-#include <graphics/shaderprogram.h>
+#include <graphics/shader/shaderprogram.h>
 
 #define UI_DEBUG_HOVER
 #undef UI_DEBUG_HOVER
