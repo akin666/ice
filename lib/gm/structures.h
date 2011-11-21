@@ -22,14 +22,20 @@ namespace GmFile
 		uint32 dictionaryUnpackedLength;
 	};
 
+	class String
+	{
+	public:
+		uint16 length;
+		uint32 offset;
+	};
+
 	class DictionaryItem
 	{
 	public:
 		uint16 type;	// 2
 		uint16 flags;	// 2
 		uint32 offset;	// 4
-		int8 name[120];	// 120byte. utf8 identifier.
-						// = 128bytes.
+		String name;
 	};
 
 	class Item
