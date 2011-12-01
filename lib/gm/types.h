@@ -4,10 +4,10 @@
  *      Author: akin
  */
 
-#ifndef ICE_BASE_TYPES_H_
-#define ICE_BASE_TYPES_H_
+#ifndef BASE_TYPES_H_
+#define BASE_TYPES_H_
 
-#include <cstdint>
+#include <stdint.h>
 
 typedef uint64_t 		uint64;
 typedef uint32_t 		uint32;

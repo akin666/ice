@@ -7,7 +7,7 @@
 #ifndef ICE_GMSTRUCTURES_H_
 #define ICE_GMSTRUCTURES_H_
 
-#include <types>
+#include "types.h"
 #include "gmfileenum.h"
 
 namespace GmFile
@@ -20,13 +20,13 @@ namespace GmFile
 		uint32 itemCount;
 		uint32 dictionaryLength;
 		uint32 dictionaryUnpackedLength;
+		uint32 code;
 	};
 
 	class String
 	{
 	public:
 		uint16 length;
-		uint32 offset;
 	};
 
 	class DictionaryItem
@@ -35,7 +35,7 @@ namespace GmFile
 		uint16 type;	// 2
 		uint16 flags;	// 2
 		uint32 offset;	// 4
-		String name;
+		uint32 stringOffset;
 	};
 
 	class Item
